@@ -8,7 +8,7 @@ if (!$result) {
 while ($row = mysqli_fetch_assoc($result)) {
     echo '
         <tr>
-          <th scope="row">' . $row['customer_id'] . '</th>
+          <th scope="row"><a id=' . $row['customer_id'] . '>' . $row['customer_id'] . '</a></th>
           <td>' . $row['first_name'] . '</td>
           <td>' . $row['last_name'] . '</td>
           <td>' . $row['city'] . '</td>
