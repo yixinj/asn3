@@ -60,17 +60,9 @@ include 'connectdb.php';
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>T</td>
-          <td>E</td>
-          <td>S</td>
-          <td>T</td>
-          <td>!</td>
-        </tr>
         <?php
-include 'listcustomers.php';
-?>
+        include 'listcustomers.php';
+        ?>
       </tbody>
     </table>
 
