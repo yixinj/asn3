@@ -47,24 +47,27 @@
 include 'connectdb.php';
 ?>
 
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">customer_id</th>
+            <th scope="col">first_name</th>
+            <th scope="col">last_name</th>
+            <th scope="col">city</th>
+            <th scope="col">phone_number</th>
+            <th scope="col">agent_id</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+include 'listcustomers.php';
+?>
+        </tbody>
+      </table>
+    </div>
     <!-- List all the information about all the customers in alphabetical order by last name. When a user selects a customer, display all of his/her products that he/she has purchased. -->
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">customer_id</th>
-          <th scope="col">first_name</th>
-          <th scope="col">last_name</th>
-          <th scope="col">city</th>
-          <th scope="col">phone_number</th>
-          <th scope="col">agent_id</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-        include 'listcustomers.php';
-        ?>
-      </tbody>
-    </table>
+
 
 
 
