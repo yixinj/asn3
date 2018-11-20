@@ -48,6 +48,7 @@ include 'connectdb.php';
 ?>
 
     <div class="container">
+    <!-- List all the information about all the customers in alphabetical order by last name. When a user selects a customer, display all of his/her products that he/she has purchased. -->
       <table class="table">
         <thead>
           <tr>
@@ -66,44 +67,62 @@ include 'listcustomers.php';
         </tbody>
       </table>
     </div>
-    <!-- List all the information about all the customers in alphabetical order by last name. When a user selects a customer, display all of his/her products that he/she has purchased. -->
-
-
 
 
     <!-- List all the products in alphabetical order by description OR in order by price. Allow the user to decide if the order is ascending or descending for both the description and price.  -->
 
-
+<!-- $query = "SELECT * FROM products ORDER BY product_description";
+ -->
+<!-- $query = "SELECT * FROM products ORDER BY cost_per_item";
+ -->
+ <!-- Kinda confusing but I'm assuming you pick one and choose ORDER BY DESCENDING/ASCENDING? -->
 
     <!-- Insert a new purchase (prompt for necessary data) Note: Send an error message if they try to give an invalid customer id number or invalid product number (or make your GUI so that it doesnt allow them to pick those). If the user tries to let a customer purchase a product they already have purchased, instead just let them change the quantity that the customer will have purchased of that product.  Don't allow the quantity to go lower, just higher by the amount they want now.  -->
 
+<!-- $query = "INSERT INTO purchases (customer_id, product_id, quantity) VALUES ()";
+ -->
+ <!-- If a previous purchase of the same item has been detected -->
+ <!-- $query = "UPDATE purchases SET quantity = <> WHERE product_id = <> and customer_id = <>;" -->
 
 
     <!-- Insert a new customer (prompt for necessary data) Note: Send an error message if they try to insert an existing customer id number (or make your GUI so that it generated the new key for the user) -->
 
+<!-- $query = "INSERT INTO customers (first_name, last_name, city, phone_number, customer_id, agent_id) VALUES (<> <> <> <> <>)";
+ -->
 
 
     <!-- Update a customer's phone number, prompt for the customer id number, display the current phone number before prompting them for the new phone number. Note: Send an error message if the user doesn't enter an existing customer id (or use your GUI to only allow them to pick from a list of current customers) -->
 
+<!-- $query = "UPDATE customers SET first_name = <>, last_name = <>, city = <>, phone_number = <>, agent_id = <> WHERE customer_id = <>";
+ -->
 
 
     <!-- Delete a customer (Prompt for the customer id to delete) Note: Send a warning message if they try to delete a non existing customer id number (or make your GUI so that they can only pick an existing customer from a list) -->
 
+<!-- $query = "DELETE FROM customers WHERE customer_id = <>";
+ -->
 
 
     <!-- List all the customer names who bought more than a given quantity of any product. Prompt the user for the quantity. Display the description of the product and quantity purchased also. -->
 
+<!-- $query = "SELECT customer.first_name, customer.last_name, products.product_description, purchases.quantity FROM customers, products, purchases WHERE customer.customer_id = purchases.customer_id AND product.product_id = purchases.product_id AND quantity > <quantity>";
+ -->
 
 
     <!-- List the description of any product that has never been purchased -->
 
+<!-- $query = "SELECT product_description FROM products WHERE product_id NOT IN (SELECT DISTINCT product_id FROM purchases)";
+ -->
 
 
     <!-- List the total number of purchases for a particular product and the product description and the total money made in sales for that product (cost * quantity)Prompt the user for the product id (Note: display an error message if the the product does not exist - or create the GUI in a way that the user cant pick a product that doesnt exist) -->
 
+<!-- $query = "SELECT ";
+ -->
 
 
     <!-- Bonus (worth 2%): add an extra field to the customer's table called cusimage (you can do this right in mysql, not using php code, make it char(100)). Allow the user to click on one of the customers and if this field is null then let the user find an image online and add the url to the officials table AND display the image in your user interface. If the field is not null, display the image at the url..  -->
+    <!-- ALTER TABLE customers ADD cus_image char(100); -->
 
     <!-- Bootstrap JS -->
     <script
