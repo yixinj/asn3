@@ -76,21 +76,20 @@ include 'list-customers.php';
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">customer_id</th>
-            <th scope="col">first_name</th>
-            <th scope="col">last_name</th>
-            <th scope="col">city</th>
-            <th scope="col">phone_number</th>
-            <th scope="col">agent_id</th>
+            <th scope="col">product_id</th>
+            <th scope="col">product_description</th>
+            <th scope="col"><a href="list-products.php?order=<?php echo isset($_GET['order'])?!$_GET['order']:1; ?>">cost_per_item</a></th>
+            <th scope="col">items_on_hand</th>
           </tr>
         </thead>
         <tbody>
           <?php
-include 'list-purchases.php';
+include 'list-products.php';
 ?>
         </tbody>
       </table>
-      <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Sorting</button>
+      <button type="button" class="btn btn-primary">Ascending price</button>
+      <button type="button" class="btn btn-primary">Descending price</button>
     </div>
 
 <!-- $query = "SELECT * FROM products ORDER BY product_description";
