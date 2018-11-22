@@ -44,10 +44,11 @@
 
     <!-- Connect to DB -->
     <?php
-include 'connectdb.php';
+include 'connect-db.php';
 ?>
 
     <div class="container">
+      <h1>Customer Information</h1>
     <!-- List all the information about all the customers in alphabetical order by last name. When a user selects a customer, display all of his/her products that he/she has purchased. -->
       <table class="table">
         <thead>
@@ -62,14 +63,35 @@ include 'connectdb.php';
         </thead>
         <tbody>
           <?php
-include 'listcustomers.php';
+include 'list-customers.php';
 ?>
+<script src="get-customer-purchases.js"></script>
         </tbody>
       </table>
     </div>
 
-
     <!-- List all the products in alphabetical order by description OR in order by price. Allow the user to decide if the order is ascending or descending for both the description and price.  -->
+    <div class="container">
+      <h1>Product Information</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">customer_id</th>
+            <th scope="col">first_name</th>
+            <th scope="col">last_name</th>
+            <th scope="col">city</th>
+            <th scope="col">phone_number</th>
+            <th scope="col">agent_id</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+include 'list-purchases.php';
+?>
+        </tbody>
+      </table>
+      <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Sorting</button>
+    </div>
 
 <!-- $query = "SELECT * FROM products ORDER BY product_description";
  -->

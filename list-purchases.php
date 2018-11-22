@@ -1,6 +1,6 @@
 <?php
-// List all the information about all the customers in alphabetical order by last name
-$query = "SELECT * FROM customers ORDER BY last_name";
+// List all the products in alphabetical order by description OR in order by price. Allow the user to decide if the order is ascending or descending for both the description and price.
+$query = "SELECT * FROM purchases";
 $result = mysqli_query($connection, $query);
 if (!$result) {
     die("databases query failed.");
