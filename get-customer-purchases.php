@@ -1,6 +1,6 @@
 <?php
 // When a user selects a customer, display all of his/her products that he/she has purchased
-$query = "SELECT * FROM purchases WHERE customer_id = ".$c;
+$query = "SELECT * FROM purchases WHERE customer_id = " . $customer_id . ";";
 $result = mysqli_query($connection, $query);
 if (!$result) {
     die("databases query failed.");
