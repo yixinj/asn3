@@ -83,9 +83,7 @@ include 'list-customers.php';
           </tr>
         </thead>
         <tbody>
-          <?php
-include 'list-products.php';
-?>
+          
         </tbody>
       </table>
       <button type="button" class="btn btn-primary">Ascending price</button>
