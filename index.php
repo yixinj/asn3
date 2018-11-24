@@ -101,30 +101,40 @@
       <h1>Insert a new purchase</h1>
       <form>
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
+          <label for="">customer_id</label>
           <input
-            type="email"
+            type="text"
             class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
+            name=""
+            id=""
+            aria-describedby="helpId"
+            placeholder=""
           />
-          <small id="emailHelp" class="form-text text-muted"
-            >We'll never share your email with anyone else.</small
-          >
+          <small id="helpId" class="form-text text-muted">Help text</small>
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
+          <label for="">product_id</label>
           <input
-            type="email"
+            type="text"
             class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
+            name=""
+            id=""
+            aria-describedby="helpId"
+            placeholder=""
           />
-          <small id="emailHelp" class="form-text text-muted"
-            >We'll never share your email with anyone else.</small
-          >
+          <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        <div class="form-group">
+          <label for="">quantity</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id=""
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <small id="helpId" class="form-text text-muted">Help text</small>
         </div>
         <button type="submit" class="btn btn-primary">Insert</button>
       </form>
