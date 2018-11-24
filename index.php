@@ -152,6 +152,49 @@
       Insert a new customer (prompt for necessary data) Note: Send an error message if they try to insert an existing customer id number (or make your GUI so that it generated the new key for the user)
     -->
 
+    <div class="container">
+      <h1>Insert a new customer</h1>
+      <form>
+        <div class="form-group">
+          <label for="">customer_id</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id=""
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        <div class="form-group">
+          <label for="">first_name</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id=""
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        <div class="form-group">
+          <label for="">last_name</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id=""
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Insert</button>
+      </form>
+    </div>
+
     <!--
       $query = "INSERT INTO customers (first_name, last_name, city, phone_number, customer_id, agent_id) VALUES (<> <> <> <> <>)";
     -->
@@ -159,7 +202,24 @@
     <!--
       Update a customer's phone number, prompt for the customer id number, display the current phone number before prompting them for the new phone number. Note: Send an error message if the user doesn't enter an existing customer id (or use your GUI to only allow them to pick from a list of current customers)
     -->
-
+    <div class="container">
+      <h1>Update a customer's phone number</h1>
+      <form>
+        <div class="form-group">
+          <label for="">customer_id</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id=""
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
     <!--
       $query = "UPDATE customers SET first_name = <>, last_name = <>, city = <>, phone_number = <>, agent_id = <> WHERE customer_id = <>";
     -->
@@ -167,6 +227,24 @@
     <!--
       Delete a customer (Prompt for the customer id to delete) Note: Send a warning message if they try to delete a non existing customer id number (or make your GUI so that they can only pick an existing customer from a list)
     -->
+    <div class="container">
+      <h1>Delete a customer</h1>
+      <form>
+        <div class="form-group">
+          <label for="">customer_id</label>
+          <input
+            type="text"
+            class="form-control"
+            name=""
+            id=""
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+    </div>
 
     <!-- $query = "DELETE FROM customers WHERE customer_id = <>"; -->
 
