@@ -45,11 +45,11 @@
     <!-- Connect to DB -->
     <?php include 'connect-db.php'; ?>
 
+    <!--
+      List all the information about all the customers in alphabetical order by last name. When a user selects a customer, display all of his/her products that he/she has purchased.
+    -->
     <div class="container">
       <h1>Customer Information</h1>
-      <!--
-        List all the information about all the customers in alphabetical order by last name. When a user selects a customer, display all of his/her products that he/she has purchased.
-      -->
       <table class="table">
         <thead>
           <tr>
@@ -253,12 +253,50 @@
     <!--
       List all the customer names who bought more than a given quantity of any product. Prompt the user for the quantity. Display the description of the product and quantity purchased also.
     -->
+    <div class="container">
+      <h1>Customer Information</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">customer_id</th>
+            <th scope="col">first_name</th>
+            <th scope="col">last_name</th>
+            <th scope="col">city</th>
+            <th scope="col">phone_number</th>
+            <th scope="col">agent_id</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php include 'list-customers.php'; ?>
+          <script src="get-customer-purchases.js"></script>
+        </tbody>
+      </table>
+    </div>
 
     <!--
       $query = "SELECT customer.first_name, customer.last_name, products.product_description, purchases.quantity FROM customers, products, purchases WHERE customer.customer_id = purchases.customer_id AND product.product_id = purchases.product_id AND quantity > <quantity>";
     -->
 
     <!-- List the description of any product that has never been purchased -->
+    <div class="container">
+      <h1>Customer Information</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">customer_id</th>
+            <th scope="col">first_name</th>
+            <th scope="col">last_name</th>
+            <th scope="col">city</th>
+            <th scope="col">phone_number</th>
+            <th scope="col">agent_id</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php include 'list-customers.php'; ?>
+          <script src="get-customer-purchases.js"></script>
+        </tbody>
+      </table>
+    </div>
 
     <!--
       $query = "SELECT product_description FROM products WHERE product_id NOT IN (SELECT DISTINCT product_id FROM purchases)";
@@ -267,8 +305,27 @@
     <!--
       List the total number of purchases for a particular product and the product description and the total money made in sales for that product (cost * quantity)Prompt the user for the product id (Note: display an error message if the the product does not exist - or create the GUI in a way that the user cant pick a product that doesnt exist)
     -->
+    <div class="container">
+      <h1>Customer Information</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">customer_id</th>
+            <th scope="col">first_name</th>
+            <th scope="col">last_name</th>
+            <th scope="col">city</th>
+            <th scope="col">phone_number</th>
+            <th scope="col">agent_id</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php include 'list-customers.php'; ?>
+          <script src="get-customer-purchases.js"></script>
+        </tbody>
+      </table>
+    </div>
 
-    <!-- $query = "SELECT "; -->
+    <!-- $query = "SELECT SUM(purchases.quantity), product.product_description, (products.cost_per_item * purchases.quantity) FROM products, purchases WHERE products.product_id = <input>" AND products.product_id = purchases.product_id GROUP BY purchases.product_id; -->
 
     <!--
       Bonus (worth 2%): add an extra field to the customer's table called cusimage (you can do this right in mysql, not using php code, make it char(100)). Allow the user to click on one of the customers and if this field is null then let the user find an image online and add the url to the officials table AND display the image in your user interface. If the field is not null, display the image at the url..
