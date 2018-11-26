@@ -9,7 +9,7 @@ if ($isAsc) {
     $query = "SELECT * FROM products ORDER BY cost_per_item ASC;";
 } else {
     // Sort data descending
-    $query = "SELECT * FROM purchases ORDER BY cost_per_item DES";
+    $query = "SELECT * FROM products ORDER BY cost_per_item DES";
 }
 
 $result = mysqli_query($connection, $query);
