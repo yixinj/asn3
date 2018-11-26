@@ -14,7 +14,7 @@
     Generates  new key for the user.
 -->
 <?php
-   include 'connectdb.php';
+   include 'connect-db.php';
 ?>
 <?php
     // Retrieves form submission
