@@ -1,7 +1,29 @@
 <!--
     Insert a new customer. 
-    Geenerates  new key for the user.
+    Generates  new key for the user.
 -->
+<?php
+   include 'connectdb.php';
+?>
+<div class="container">
+    <h1>Customer Information</h1>
+    <table class="table">
+    <thead>
+        <tr>
+        <th scope="col">customer_id</th>
+        <th scope="col">first_name</th>
+        <th scope="col">last_name</th>
+        <th scope="col">city</th>
+        <th scope="col">phone_number</th>
+        <th scope="col">agent_id</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php include 'list-customers.php'; ?>
+        <script src="get-customer-purchases.js"></script>
+    </tbody>
+    </table>
+</div>
 <?php
     // Retrieves form submission
     $first_name= $_POST["first_name"];
