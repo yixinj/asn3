@@ -35,9 +35,9 @@
     $customer_id = (string)$newkey;
 
     // Inserts into table
-    $query = 'INSERT INTO customers ("first_name", "last_name", "city", "phone_number", "agent_id", "customer_id") VALUES ("' . $first_name . '", "' . $last_name . '", "' . $city . '", "' . $phone_number . '", "' . $agent_id . '", "' . $customer_id . '");';
+    $query = 'INSERT INTO customers (first_name, last_name, city,  phone_number, agent_id, customer_id) VALUES ("' . $first_name . '", "' . $last_name . '", "' . $city . '", "' . $phone_number . '", "' . $agent_id . '", "' . $customer_id . '");';
     if (!mysqli_query($connection, $query)) {
-        die("Error: insert failed" . mysqli_error($connection));
+        die("Error: insert failed: " . mysqli_error($connection));
     }
     echo "Your purchase was added!";
     mysqli_close($connection);
