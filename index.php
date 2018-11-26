@@ -82,7 +82,9 @@
             <th scope="col">items_on_hand</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          <?php include 'list-products.php'; ?>
+        </tbody>
       </table>
       <button type="button" class="btn btn-primary">Ascending price</button>
       <button type="button" class="btn btn-primary">Descending price</button>
