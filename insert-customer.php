@@ -1,29 +1,21 @@
-<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Insert Customer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <!--
     Insert a new customer. 
     Generates  new key for the user.
 -->
 <?php
    include 'connectdb.php';
 ?>
-<div class="container">
-    <h1>Customer Information</h1>
-    <table class="table">
-    <thead>
-        <tr>
-        <th scope="col">customer_id</th>
-        <th scope="col">first_name</th>
-        <th scope="col">last_name</th>
-        <th scope="col">city</th>
-        <th scope="col">phone_number</th>
-        <th scope="col">agent_id</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php include 'list-customers.php'; ?>
-        <script src="get-customer-purchases.js"></script>
-    </tbody>
-    </table>
-</div>
 <?php
     // Retrieves form submission
     $first_name= $_POST["first_name"];
@@ -50,3 +42,25 @@
     echo "Your purchase was added!";
     mysqli_close($connection);
 ?>
+
+<div class="container">
+    <h1>Customer Information</h1>
+    <table class="table">
+    <thead>
+        <tr>
+        <th scope="col">customer_id</th>
+        <th scope="col">first_name</th>
+        <th scope="col">last_name</th>
+        <th scope="col">city</th>
+        <th scope="col">phone_number</th>
+        <th scope="col">agent_id</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php include 'list-customers.php'; ?>
+        <script src="get-customer-purchases.js"></script>
+    </tbody>
+    </table>
+</div>
+</body>
+</html>
