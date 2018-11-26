@@ -2,15 +2,15 @@
 // List all the products in alphabetical order by description OR in order by price. Allow the user to decide if the order is ascending or descending for both the description and price.
 
 // Decides if it is ascending or not
-// $isAsc = 0;
+$isAsc = 0;
 
-// if ($isAsc) {
+if ($isAsc) {
     // Sort data ascending
-    $query = "SELECT * FROM purchases;";
-// } else {
+    $query = "SELECT * FROM products ORDER BY cost_per_item ASC;";
+} else {
     // Sort data descending
-    // $query = "SELECT * FROM purchases ORDER BY cost_per_item DES";
-// }
+    $query = "SELECT * FROM purchases ORDER BY cost_per_item DES";
+}
 
 $result = mysqli_query($connection, $query);
 if (!$result) {
