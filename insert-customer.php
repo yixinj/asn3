@@ -25,7 +25,7 @@
     $agent_id = $_POST["agent_id"];
 
     // Finds largest ID to autoindex
-    $query1= 'select max(customerid) as maxid from customers';
+    $query1= 'select max(customer_id) as maxid from customers';
     $result=mysqli_query($connection,$query1);
     if (!$result) {
             die("database max query failed.");
