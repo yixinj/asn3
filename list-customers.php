@@ -1,6 +1,6 @@
 <?php
 // List all the information about all the customers in alphabetical order by last name
-$query = "SELECT * FROM customers ORDER BY last_name";
+$query = "SELECT * FROM customers ORDER BY last_name;";
 $result = mysqli_query($connection, $query);
 if (!$result) {
     die("databases query failed.");

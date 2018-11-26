@@ -6,7 +6,7 @@
 
 // if ($isAsc) {
     // Sort data ascending
-    $query = "SELECT * FROM purchases ORDER BY cost_per_item ASC";
+    $query = "SELECT * FROM purchases ORDER BY cost_per_item ASC;";
 // } else {
     // Sort data descending
     // $query = "SELECT * FROM purchases ORDER BY cost_per_item DES";
