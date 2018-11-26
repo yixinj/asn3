@@ -46,7 +46,7 @@
     <?php include 'connect-db.php'; ?>
 
     <!--
-      List all the information about all the customers in alphabetical order by last name. When a user selects a customer, display all of his/her products that he/she has purchased.
+      List all the information about all the customers in alphabetical order by last name. TODO: When a user selects a customer, display all of his/her products that he/she has purchased.
     -->
     <div class="container">
       <h1>Customer Information</h1>
@@ -69,7 +69,7 @@
     </div>
 
     <!--
-      List all the products in alphabetical order by description OR in order by price. Allow the user to decide if the order is ascending or descending for both the description and price.
+      List all the products in alphabetical order by description OR in order by price. TODO: Allow the user to decide if the order is ascending or descending for both the description and price.
     -->
     <div class="container">
       <h1>Product Information</h1>
@@ -97,48 +97,42 @@
     -->
 
     <!--
-      Insert a new purchase (prompt for necessary data) Note: Send an error message if they try to give an invalid customer id number or invalid product number (or make your GUI so that it doesnt allow them to pick those). If the user tries to let a customer purchase a product they already have purchased, instead just let them change the quantity that the customer will have purchased of that product.  Don't allow the quantity to go lower, just higher by the amount they want now.
+      TODO: Insert a new purchase (prompt for necessary data) Note: Send an error message if they try to give an invalid customer id number or invalid product number (or make your GUI so that it doesnt allow them to pick those). If the user tries to let a customer purchase a product they already have purchased, instead just let them change the quantity that the customer will have purchased of that product.  Don't allow the quantity to go lower, just higher by the amount they want now.
     -->
     <div class="container">
       <h1>Insert a new purchase</h1>
-      <form>
+      <form action="insert-purchase.php" method="post">
         <div class="form-group">
           <label for="">customer_id</label>
           <input
             type="text"
             class="form-control"
-            name=""
+            name="customer_id"
             id=""
-            aria-describedby="helpId"
-            placeholder=""
+            placeholder="Customer ID"
           />
-          <small id="helpId" class="form-text text-muted">Help text</small>
         </div>
         <div class="form-group">
           <label for="">product_id</label>
           <input
             type="text"
             class="form-control"
-            name=""
+            name="product_id"
             id=""
-            aria-describedby="helpId"
-            placeholder=""
+            placeholder="Product ID"
           />
-          <small id="helpId" class="form-text text-muted">Help text</small>
         </div>
         <div class="form-group">
           <label for="">quantity</label>
           <input
             type="text"
             class="form-control"
-            name=""
+            name="quantity"
             id=""
-            aria-describedby="helpId"
-            placeholder=""
+            placeholder="Quantity"
           />
-          <small id="helpId" class="form-text text-muted">Help text</small>
         </div>
-        <button type="submit" class="btn btn-primary">Insert</button>
+        <button type="submit" class="btn btn-primary">Insert Purchase</button>
       </form>
     </div>
 
@@ -151,49 +145,63 @@
     -->
 
     <!--
-      Insert a new customer (prompt for necessary data) Note: Send an error message if they try to insert an existing customer id number (or make your GUI so that it generated the new key for the user)
+      TODO: Insert a new customer (prompt for necessary data) Note: Send an error message if they try to insert an existing customer id number (or make your GUI so that it generated the new key for the user)
     -->
 
     <div class="container">
       <h1>Insert a new customer</h1>
-      <form>
-        <div class="form-group">
-          <label for="">customer_id</label>
-          <input
-            type="text"
-            class="form-control"
-            name=""
-            id=""
-            aria-describedby="helpId"
-            placeholder=""
-          />
-          <small id="helpId" class="form-text text-muted">Help text</small>
-        </div>
+      <form action="insert-customer.php" method="post">
         <div class="form-group">
           <label for="">first_name</label>
           <input
             type="text"
             class="form-control"
-            name=""
+            name="first_name"
             id=""
-            aria-describedby="helpId"
-            placeholder=""
+            placeholder="first_name"
           />
-          <small id="helpId" class="form-text text-muted">Help text</small>
         </div>
         <div class="form-group">
           <label for="">last_name</label>
           <input
             type="text"
             class="form-control"
-            name=""
+            name="last_name"
             id=""
-            aria-describedby="helpId"
-            placeholder=""
+            placeholder="last_name"
           />
-          <small id="helpId" class="form-text text-muted">Help text</small>
         </div>
-        <button type="submit" class="btn btn-primary">Insert</button>
+        <div class="form-group">
+          <label for="">city</label>
+          <input
+            type="text"
+            class="form-control"
+            name="city"
+            id=""
+            placeholder="city"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">phone_number</label>
+          <input
+            type="text"
+            class="form-control"
+            name="phone_number"
+            id=""
+            placeholder="phone_number"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">agent_id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="agent_id"
+            id=""
+            placeholder="agent_id"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Insert Purchase</button>
       </form>
     </div>
 
@@ -202,7 +210,7 @@
     -->
 
     <!--
-      Update a customer's phone number, prompt for the customer id number, display the current phone number before prompting them for the new phone number. Note: Send an error message if the user doesn't enter an existing customer id (or use your GUI to only allow them to pick from a list of current customers)
+      TODO: Update a customer's phone number, prompt for the customer id number, display the current phone number before prompting them for the new phone number. Note: Send an error message if the user doesn't enter an existing customer id (or use your GUI to only allow them to pick from a list of current customers)
     -->
     <div class="container">
       <h1>Update a customer's phone number</h1>
@@ -227,7 +235,7 @@
     -->
 
     <!--
-      Delete a customer (Prompt for the customer id to delete) Note: Send a warning message if they try to delete a non existing customer id number (or make your GUI so that they can only pick an existing customer from a list)
+      TODO: Delete a customer (Prompt for the customer id to delete) Note: Send a warning message if they try to delete a non existing customer id number (or make your GUI so that they can only pick an existing customer from a list)
     -->
     <div class="container">
       <h1>Delete a customer</h1>
@@ -251,7 +259,7 @@
     <!-- $query = "DELETE FROM customers WHERE customer_id = <>"; -->
 
     <!--
-      List all the customer names who bought more than a given quantity of any product. Prompt the user for the quantity. Display the description of the product and quantity purchased also.
+      TODO: List all the customer names who bought more than a given quantity of any product. Prompt the user for the quantity. Display the description of the product and quantity purchased also.
     -->
     <div class="container">
       <h1>Customer Information</h1>
@@ -277,7 +285,7 @@
       $query = "SELECT customer.first_name, customer.last_name, products.product_description, purchases.quantity FROM customers, products, purchases WHERE customer.customer_id = purchases.customer_id AND product.product_id = purchases.product_id AND quantity > <quantity>";
     -->
 
-    <!-- List the description of any product that has never been purchased -->
+    <!-- TODO: List the description of any product that has never been purchased -->
     <div class="container">
       <h1>Customer Information</h1>
       <table class="table">
@@ -303,7 +311,7 @@
     -->
 
     <!--
-      List the total number of purchases for a particular product and the product description and the total money made in sales for that product (cost * quantity)Prompt the user for the product id (Note: display an error message if the the product does not exist - or create the GUI in a way that the user cant pick a product that doesnt exist)
+      TODO: List the total number of purchases for a particular product and the product description and the total money made in sales for that product (cost * quantity)Prompt the user for the product id (Note: display an error message if the the product does not exist - or create the GUI in a way that the user cant pick a product that doesnt exist)
     -->
     <div class="container">
       <h1>Customer Information</h1>
@@ -328,7 +336,7 @@
     <!-- $query = "SELECT SUM(purchases.quantity), product.product_description, (products.cost_per_item * purchases.quantity) FROM products, purchases WHERE products.product_id = <input>" AND products.product_id = purchases.product_id GROUP BY purchases.product_id; -->
 
     <!--
-      Bonus (worth 2%): add an extra field to the customer's table called cusimage (you can do this right in mysql, not using php code, make it char(100)). Allow the user to click on one of the customers and if this field is null then let the user find an image online and add the url to the officials table AND display the image in your user interface. If the field is not null, display the image at the url..
+      TODO: Bonus (worth 2%): add an extra field to the customer's table called cusimage (you can do this right in mysql, not using php code, make it char(100)). Allow the user to click on one of the customers and if this field is null then let the user find an image online and add the url to the officials table AND display the image in your user interface. If the field is not null, display the image at the url..
     -->
     <!-- ALTER TABLE customers ADD cus_image char(100); -->
 
