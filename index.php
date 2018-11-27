@@ -82,9 +82,9 @@
     </div>
   </div>
 
-  <footer class="border-top">
-    <div class="row">
-      <p>Assignment 3 | By Yixin Jiang</p>
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">Assignment 3 by Yixin Jiang</span>
     </div>
   </footer>
 
