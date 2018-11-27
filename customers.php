@@ -90,7 +90,7 @@
                       <a style="color:red" href="delete-customer.php?customer_id=' . $row['customer_id'] . '">Delete</>
                       </td>
                       <td>';
-                if($row['cus_image'] = null) {
+                if($row['cus_image'] === null) {
                   echo '<a href="edit-customer-image.php?customer_id=' . $row['customer_id'] . '">Upload image</a><br>';
                 }
                 else {
