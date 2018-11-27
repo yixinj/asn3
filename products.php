@@ -71,19 +71,19 @@
             // Decides if it will be asc or desc price or description. Default = desc price
             if ($_GET['sort'] == 'asc_price')
             {
-                $sql .= "cost_per_item ASC";
+                $query .= "cost_per_item ASC";
             }
             elseif ($_GET['sort'] == 'asc_description')
             {
-                $sql .= "product_description DESC";
+                $query .= "product_description DESC";
             }
             elseif ($_GET['sort'] == 'desc_description')
             {
-                $sql .= "product_description ASC";
+                $query .= "product_description ASC";
             }
             else
             {
-                $sql .= "cost_per_item DESC";
+                $query .= "cost_per_item DESC";
             }
 
             $result = mysqli_query($connection, $query);
