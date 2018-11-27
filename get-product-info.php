@@ -68,7 +68,7 @@
             </thead>
             <tbody>
                 <?php
-                $query = 'SELECT SUM(purchases.quantity) AS total_purchases, product.product_description AS product_description, (products.cost_per_item * purchases.quantity) AS money_made FROM products, purchases WHERE products.product_id = ' . $product_id . 'AND products.product_id = purchases.product_id GROUP BY purchases.product_id';
+                $query = 'SELECT SUM(purchases.quantity) AS total_purchases, products.product_description AS product_description, (products.cost_per_item * purchases.quantity) AS money_made FROM products, purchases WHERE products.product_id = ' . $product_id . ' AND products.product_id = purchases.product_id GROUP BY purchases.product_id';
                 $result = mysqli_query($connection, $query);
                 if (!$result) {
                     die("Querying for product ID failed.");
