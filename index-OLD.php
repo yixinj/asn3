@@ -243,7 +243,7 @@
     <!-- $query = "DELETE FROM customers WHERE customer_id = <>"; -->
 
     <!--
-      TODO: List all the customer names who bought more than a given quantity of any product. Prompt the user for the quantity. Display the description of the product and quantity purchased also.
+      List all the customer names who bought more than a given quantity of any product. Prompt the user for the quantity. Display the description of the product and quantity purchased also.
     -->
     <div class="container">
       <h1>Customer Information</h1>
@@ -295,7 +295,7 @@
     -->
 
     <!--
-      TODO: List the total number of purchases for a particular product and the product description and the total money made in sales for that product (cost * quantity)Prompt the user for the product id (Note: display an error message if the the product does not exist - or create the GUI in a way that the user cant pick a product that doesnt exist)
+      List the total number of purchases for a particular product and the product description and the total money made in sales for that product (cost * quantity)Prompt the user for the product id (Note: display an error message if the the product does not exist - or create the GUI in a way that the user cant pick a product that doesnt exist)
     -->
     <div class="container">
       <h1>Customer Information</h1>
@@ -320,7 +320,7 @@
     <!-- $query = "SELECT SUM(purchases.quantity), product.product_description, (products.cost_per_item * purchases.quantity) FROM products, purchases WHERE products.product_id = <input>" AND products.product_id = purchases.product_id GROUP BY purchases.product_id; -->
 
     <!--
-      TODO: Bonus (worth 2%): add an extra field to the customer's table called cusimage (you can do this right in mysql, not using php code, make it char(100)). Allow the user to click on one of the customers and if this field is null then let the user find an image online and add the url to the officials table AND display the image in your user interface. If the field is not null, display the image at the url..
+      TODO: Allow the user to click on one of the customers and if this field is null then let the user find an image online and add the url to the officials table AND display the image in your user interface. If the field is not null, display the image at the url..
     -->
     <!-- ALTER TABLE customers ADD cus_image char(100); -->
 

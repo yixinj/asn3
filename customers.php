@@ -64,6 +64,7 @@
               <th scope="col">Phone number</th>
               <th scope="col">Agent ID</th>
               <th scope="col">Actions</th>
+              <th scope="col">Image</th>
             </tr>
           </thead>
           <tbody>
@@ -88,6 +89,7 @@
                       <a href="edit-phone-number.php?customer_id=' . $row['customer_id'] . '">Edit number</a><br>
                       <a style="color:red" href="delete-customer.php?customer_id=' . $row['customer_id'] . '">Delete</>
                       </td>
+                      <td>' . $row['cus_image'] . '</td>
                     </tr>
                     ';
             }

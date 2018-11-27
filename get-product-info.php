@@ -48,7 +48,7 @@
   <div class="container">
     <h1 class="section-title">Other</h1>
     <!--
-      TODO: List the total number of purchases for a particular product and the product description and the total money made in sales for that product (cost * quantity)Prompt the user for the product id (Note: display an error message if the the product does not exist - or create the GUI in a way that the user cant pick a product that doesnt exist)
+      List the total number of purchases for a particular product and the product description and the total money made in sales for that product (cost * quantity). Prompt the user for the product id. Display an error message if the the product does not exist
     -->
     <div class="card">
         <div class="card-body">
@@ -71,7 +71,7 @@
                 $query = 'SELECT SUM(purchases.quantity) AS total_purchases, products.product_description AS product_description, (products.cost_per_item * SUM(purchases.quantity)) AS money_made FROM products, purchases WHERE products.product_id = ' . $product_id . ' AND products.product_id = purchases.product_id GROUP BY purchases.product_id';
                 $result = mysqli_query($connection, $query);
                 if (!$result) {
-                    die("Querying for product ID failed.");
+                    die("Product with given ID does not exist.");
                 }
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '
