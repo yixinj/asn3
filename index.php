@@ -46,7 +46,7 @@
   <?php include 'connect-db.php';?>
 
   <div class="container">
-    <h1 id="documentation-title">Documentation</h1>
+    <h1>Documentation</h1>
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Customers</h3>
@@ -84,7 +84,7 @@
 
   <footer class="footer">
     <div class="container">
-      <span class="text-muted">CS3319 assignment 3 | by Yixin Jiang.</span>
+      <span class="text-muted">CS3319 Assignment 3 by Yixin Jiang</span>
     </div>
   </footer>
 

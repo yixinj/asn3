@@ -16,7 +16,7 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">CS3319 Assignment 3</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
       data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -26,14 +26,17 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">Home</a>
+        </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="customers.php">Customers <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Customers</a>
+          <a class="nav-link" href="products.php">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Products</a>
+          <a class="nav-link" href="other.php">Other</a>
         </li>
       </ul>
     </div>
@@ -41,6 +44,62 @@
 
   <!-- Connect to DB -->
   <?php include 'connect-db.php';?>
+
+  <!--
+      List all the information about all the customers in alphabetical order by last name. TODO: When a user selects a customer, display all of his/her products that he/she has purchased.
+    -->
+  <div class="container">
+    <h1>Customers</h1>
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Customer List</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">customer_id</th>
+              <th scope="col">first_name</th>
+              <th scope="col">last_name</th>
+              <th scope="col">city</th>
+              <th scope="col">phone_number</th>
+              <th scope="col">agent_id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            // List all the information about all the customers in alphabetical order by last name
+            $query = "SELECT * FROM customers ORDER BY last_name;";
+            $result = mysqli_query($connection, $query);
+            if (!$result) {
+                die("databases query failed.");
+            }
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '
+                    <tr>
+                      <th scope="row"><a id=customer' . $row['customer_id'] . ' href="#">' . $row['customer_id'] . '</a></th>
+                      <td>' . $row['first_name'] . '</td>
+                      <td>' . $row['last_name'] . '</td>
+                      <td>' . $row['city'] . '</td>
+                      <td>' . $row['phone_number'] . '</td>
+                      <td>' . $row['agent_id'] . '</td>
+                    </tr>
+                    ';
+            }
+            mysqli_free_result($result);
+            <script src="get-customer-purchases.js"></script>
+          </tbody>
+        </table>
+        <a href="customers.php" class="btn btn-primary">Go to section</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">CS3319 Assignment 3 by Yixin Jiang</span>
+    </div>
+  </footer>
+
+
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
