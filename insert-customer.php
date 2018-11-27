@@ -79,6 +79,8 @@
             echo "Your customer was added!";
             mysqli_close($connection);
         ?>
+        <!-- Back button :) -->
+        <button type="button" class="btn btn-primary" onclick="goBack()">Go back</button>
       </div>
     </div>
   </div>

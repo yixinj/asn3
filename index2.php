@@ -145,7 +145,7 @@
     -->
 
     <!--
-      TODO: Insert a new customer (prompt for necessary data) Note: Send an error message if they try to insert an existing customer id number (or make your GUI so that it generated the new key for the user)
+      Insert a new customer (prompt for necessary data) Note: Send an error message if they try to insert an existing customer id number (or make your GUI so that it generated the new key for the user)
     -->
 
     <div class="container">
