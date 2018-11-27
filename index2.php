@@ -46,7 +46,7 @@
     <?php include 'connect-db.php'; ?>
 
     <!--
-      List all the information about all the customers in alphabetical order by last name. TODO: When a user selects a customer, display all of his/her products that he/she has purchased.
+      List all the information about all the customers in alphabetical order by last name. When a user selects a customer, display all of his/her products that he/she has purchased.
     -->
     <div class="container">
       <h1>Customer Information</h1>

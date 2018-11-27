@@ -45,9 +45,9 @@
   <!-- Connect to DB -->
   <?php include 'connect-db.php';?>
 
-  <!-- TODO: When a user selects a customer, display all of his/her products that he/she has purchased. -->
+  <!-- When a user selects a customer, display all of his/her products that he/she has purchased. -->
   <div class="container">
-    <h1 class="section-title">Customers</h1>
+    <!-- Echos the customer ID -->
     <?php
     echo '<h1 class="section title">Customer '. $_GET['customer_id'] . '</h1>'
     ?>
