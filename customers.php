@@ -17,7 +17,7 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">CS3319 Assignment 3</a>
+    <a class="navbar-brand" href="index.php">CS3319 Assignment 3</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
       data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -153,27 +153,6 @@
         </form>
       </div>
     </div>
-    <!--
-      TODO: Update a customer's phone number, prompt for the customer id number, display the current phone number before prompting them for the new phone number. Note: Send an error message if the user doesn't enter an existing customer id (or use your GUI to only allow them to pick from a list of current customers)
-    -->
-    <div class="card">
-      <div class="card-body">
-        <h3 class="card-title">Edit Phone Number</h4>
-        <form action="edit-phone-number.php" method="post">
-          <div class="form-group">
-            <label>Customer ID</label>
-            <input
-              type="text"
-              class="form-control"
-              name="customer_id"
-              placeholder="10"
-            />
-          </div>
-          <button type="submit" class="btn btn-primary">Update phone number</button>
-        </form>
-      </div>
-    </div>
-  </div>
 
   <footer class="footer">
     <div class="container">
