@@ -49,35 +49,35 @@
     <h1>Documentation</h1>
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Customers</h5>
+        <h3 class="card-title">Customers</h3>
         <ul>
           <li class="card-text">List customers</li>
           <li class="card-text">Add customers</li>
           <li class="card-text">Edit customer phone numbers</li>
           <li class="card-text">Delete customers</li>
         </ul>
-        <a href="customers.php" class="btn btn-primary">Go to customers</a>
+        <a href="customers.php" class="btn btn-primary">Go to section</a>
       </div>
     </div>
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">
-          Products</h5>
+        <h3 class="card-title">
+          Products</h3>
         <ul>
           <li class="card-text">List products, ascending or descending</li>
           <li class="card-text">List products that have never been purchased</li>
         </ul>
-        <a href="products.php" class="btn btn-primary">Go to products</a>
+        <a href="products.php" class="btn btn-primary">Go to section</a>
       </div>
     </div>
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Other</h5>
+        <h3 class="card-title">Other</h3>
         <ul>
           <li class="card-text">Insert purchases</li>
           <li class="card-text">List total number of purchases given product ID</li>
         </ul>
-        <a href="other.php" class="btn btn-primary">Go to other</a>
+        <a href="other.php" class="btn btn-primary">Go to section</a>
       </div>
     </div>
   </div>
