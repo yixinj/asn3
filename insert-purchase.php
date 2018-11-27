@@ -46,7 +46,7 @@
   <?php include 'connect-db.php';?>
 
   <!--
-        TODO: Insert a new purchase (prompt for necessary data) Note: Send an error message if they try to give an invalid customer id number or invalid product number (or make your GUI so that it doesnt allow them to pick those). If the user tries to let a customer purchase a product they already have purchased, instead just let them change the quantity that the customer will have purchased of that product.  Don't allow the quantity to go lower, just higher by the amount they want now.
+        Insert a new purchase (prompt for necessary data). Send an error message if they try to give an invalid customer id number or invalid product number. TODO: If the user tries to let a customer purchase a product they already have purchased, instead just let them change the quantity that the customer will have purchased of that product.  Don't allow the quantity to go lower, just higher by the amount they want now.
       -->
   <div class="container">
     <h1 class="section-title">Other</h1>
@@ -59,13 +59,36 @@
             $customer_id =  (int)$_POST["customer_id"];
             $product_id = (int)$_POST["product_id"];
             $quantity =  (int)$_POST["quantity"];
-
-            // Inserts into table
-            $query = 'INSERT INTO purchases(customer_id, product_id, quantity) values(' . $customer_id . ',' . $product_id . ',"' . $quantity . '")';
-            if (!mysqli_query($connection, $query)) {
-                die("Error - insert failed: " . mysqli_error($connection));
+            
+            // Checks if purchase already exists
+            $purchase_exists = 0;
+            $query = 'SELECT * FROM purchases WHERE customer_id = '. $customer_id . ' AND product_id = ' . $product_id;
+            $result = mysqli_query($connection, $query);
+            if (!$result) {
+                die("Check if purchase exists failed.");
             }
-            echo "Your purchase was added!";
+            while ($row = mysqli_fetch_assoc($result)) {
+                // If purchase exists, value of $purchase_exists will be > 0
+                $purchase_exists += $row[''];
+            }
+            mysqli_free_result($result);
+
+            // If already purchased, update value
+            if($purchase_exists > 0) {
+                $query = 'UPDATE purchases SET quantity = ' . $quantity . ' WHERE customer_id = '. $customer_id . ' AND product_id = ' . $product_id;
+                if (!mysqli_query($connection, $query)) {
+                    die("Error - insert failed: " . mysqli_error($connection));
+                }
+                echo "Your purchase was added!";
+            }
+            // Otherwise, insert into table
+            else {
+                $query = 'INSERT INTO purchases(customer_id, product_id, quantity) VALUES(' . $customer_id . ',' . $product_id . ',"' . $quantity . '")';
+                if (!mysqli_query($connection, $query)) {
+                    die("Error - insert failed: " . mysqli_error($connection));
+                }
+                echo "Your purchase was added!";
+            }
             mysqli_close($connection);
         ?>
         </p>
