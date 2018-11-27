@@ -57,12 +57,12 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">customer_id</th>
-              <th scope="col">first_name</th>
-              <th scope="col">last_name</th>
-              <th scope="col">city</th>
-              <th scope="col">phone_number</th>
-              <th scope="col">agent_id</th>
+              <th scope="col">Customer ID</th>
+              <th scope="col">First name</th>
+              <th scope="col">Last name</th>
+              <th scope="col">City</th>
+              <th scope="col">Phone number</th>
+              <th scope="col">Agent ID</th>
               <th scope="col">Actions</th>
             </tr>
           </thead>

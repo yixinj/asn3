@@ -269,7 +269,7 @@
       $query = "SELECT customer.first_name, customer.last_name, products.product_description, purchases.quantity FROM customers, products, purchases WHERE customer.customer_id = purchases.customer_id AND product.product_id = purchases.product_id AND quantity > <quantity>";
     -->
 
-    <!-- TODO: List the description of any product that has never been purchased -->
+    <!-- List the description of any product that has never been purchased -->
     <div class="container">
       <h1>Customer Information</h1>
       <table class="table">

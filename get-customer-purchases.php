@@ -57,10 +57,10 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">product_id</th>
-              <th scope="col">product_description</th>
-              <th scope="col">cost_per_item</th>
-              <th scope="col">items_on_hand</th>
+              <th scope="col">Product ID</th>
+              <th scope="col">Product description</th>
+              <th scope="col">Cost per item</th>
+              <th scope="col">Items on hand</th>
             </tr>
           </thead>
           <tbody>

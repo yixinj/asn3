@@ -53,10 +53,10 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">product_id</th>
-              <th scope="col">product_description</th>
-              <th scope="col">cost_per_item</th>
-              <th scope="col">items_on_hand</th>
+              <th scope="col">Product ID</th>
+              <th scope="col">Product description</th>
+              <th scope="col">Cost per item</th>
+              <th scope="col">Items on hand</th>
             </tr>
           </thead>
           <tbody>
@@ -110,17 +110,17 @@
         <a class="btn btn-primary" href="products.php?sort=desc_description" role="button">Descending description</a>
       </div>
     </div>
-    <!-- TODO: List the description of any product that has never been purchased -->
+    <!-- List the description of any product that has never been purchased -->
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Unpurchased Products</h3>
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">product_id</th>
-              <th scope="col">product_description</th>
-              <th scope="col">cost_per_item</th>
-              <th scope="col">items_on_hand</th>
+              <th scope="col">Product ID</th>
+              <th scope="col">Product description</th>
+              <th scope="col">Cost per item</th>
+              <th scope="col">Items on hand</th>
             </tr>
           </thead>
           <tbody>

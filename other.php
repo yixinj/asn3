@@ -85,48 +85,18 @@
     -->
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title">Customer List</h3>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">customer_id</th>
-              <th scope="col">first_name</th>
-              <th scope="col">last_name</th>
-              <th scope="col">city</th>
-              <th scope="col">phone_number</th>
-              <th scope="col">agent_id</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            // List all the information about all the customers in alphabetical order by last name
-            $query = "SELECT * FROM customers ORDER BY last_name;";
-            $result = mysqli_query($connection, $query);
-            if (!$result) {
-                die("databases query failed.");
-            }
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo '
-                    <tr>
-                      <th scope="row">' . $row['customer_id'] . '</th>
-                      <td>' . $row['first_name'] . '</td>
-                      <td>' . $row['last_name'] . '</td>
-                      <td>' . $row['city'] . '</td>
-                      <td>' . $row['phone_number'] . '</td>
-                      <td>' . $row['agent_id'] . '</td>
-                      <td>
-                      <a href="get-customer-purchases.php?customer_id=' . $row['customer_id'] . '">Purchases</a><br>
-                      <a href="edit-phone-number.php?customer_id=' . $row['customer_id'] . '">Edit number</a><br>
-                      <a style="color:red" href="delete-customer.php?customer_id=' . $row['customer_id'] . '">Delete</>
-                      </td>
-                    </tr>
-                    ';
-            }
-            mysqli_free_result($result);
-            ?>
-          </tbody>
-        </table>
+        <h3 class="card-title">Customers Over Quantity</h3>
+        <form action="/customers-over-quantity.php" method="post">
+          <div class="form-group">
+            <label for="">Quantity</label>
+            <input
+              type="text"
+              class="form-control"
+              name="quantity"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Query</button>
+        </form>
       </div>
     </div>
     <!--
@@ -134,49 +104,18 @@
     -->
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title">Customer List</h3>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">customer_id</th>
-              <th scope="col">first_name</th>
-              <th scope="col">last_name</th>
-              <th scope="col">city</th>
-              <th scope="col">phone_number</th>
-              <th scope="col">agent_id</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            // List all the information about all the customers in alphabetical order by last name
-            $query = "SELECT * FROM customers ORDER BY last_name;";
-            $result = mysqli_query($connection, $query);
-            if (!$result) {
-                die("databases query failed.");
-            }
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo '
-                    <tr>
-                      <th scope="row">' . $row['customer_id'] . '</th>
-                      <td>' . $row['first_name'] . '</td>
-                      <td>' . $row['last_name'] . '</td>
-                      <td>' . $row['city'] . '</td>
-                      <td>' . $row['phone_number'] . '</td>
-                      <td>' . $row['agent_id'] . '</td>
-                      <td>
-                      <a href="get-customer-purchases.php?customer_id=' . $row['customer_id'] . '">Purchases</a><br>
-                      <a href="edit-phone-number.php?customer_id=' . $row['customer_id'] . '">Edit number</a><br>
-                      <a style="color:red" href="delete-customer.php?customer_id=' . $row['customer_id'] . '">Delete</>
-                      </td>
-                    </tr>
-                    ';
-            }
-            mysqli_free_result($result);
-            mysqli_close($connection);
-            ?>
-          </tbody>
-        </table>
+        <h3 class="card-title">Product Sales Info</h3>
+        <form action="get-product-info.php" method="post">
+          <div class="form-group">
+            <label for="">Product ID</label>
+            <input
+              type="text"
+              class="form-control"
+              name="product_id"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Query</button>
+        </form>
       </div>
     </div>
   </div>
