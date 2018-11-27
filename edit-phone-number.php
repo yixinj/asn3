@@ -52,32 +52,19 @@
     <h1 class="section-title">Customers</h1>
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title">Insert Customer</h3>
+        <h3 class="card-title">Update Phone Number</h3>
         <p class="card-text">
         <?php
             // Retrieves form submission
-            $first_name= $_POST["first_name"];
-            $last_name = $_POST["last_name"];
-            $city = $_POST["city"];
+            $customer_id= $_POST["customer_id"];
             $phone_number = $_POST["phone_number"];
-            $agent_id = $_POST["agent_id"];
 
-            // Finds largest ID to autoindex
-            $query1= 'SELECT MAX(customer_id) AS maxid FROM customers';
-            $result=mysqli_query($connection,$query1);
-            if (!$result) {
-                die("Could not find MAX(customer_id).");
-            }
-            $row=mysqli_fetch_assoc($result);
-            $newkey = intval($row["maxid"]) + 1;
-            $customer_id = (string)$newkey;
-
-            // Inserts into table
-            $query = 'INSERT INTO customers (first_name, last_name, city,  phone_number, agent_id, customer_id) VALUES ("' . $first_name . '", "' . $last_name . '", "' . $city . '", "' . $phone_number . '", "' . $agent_id . '", "' . $customer_id . '");';
+            // Tries to update phone number
+            $query = 'UPDATE customers SET phone_number = "' . $phone_number . '" WHERE customer_id = "'. $customer_id . '"';
             if (!mysqli_query($connection, $query)) {
-                die("Error -- insert failed: " . mysqli_error($connection));
+                die("Error - update failed: " . mysqli_error($connection));
             }
-            echo 'New customer was added!';
+            echo 'Customer phone number was edited!';
             mysqli_close($connection);
         ?>
         </p>
