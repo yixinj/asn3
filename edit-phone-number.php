@@ -71,7 +71,6 @@
               type="text"
               class="form-control"
               name="phone_number"
-              placeholder="123-4567"
             />
           </div>
           <button type="submit" class="btn btn-primary">Update</button>

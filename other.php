@@ -60,8 +60,6 @@
               type="text"
               class="form-control"
               name="customer_id"
-              id=""
-              placeholder="Customer ID"
             />
           </div>
           <div class="form-group">
@@ -70,8 +68,6 @@
               type="text"
               class="form-control"
               name="product_id"
-              id=""
-              placeholder="Product ID"
             />
           </div>
           <div class="form-group">
@@ -80,8 +76,6 @@
               type="text"
               class="form-control"
               name="quantity"
-              id=""
-              placeholder="Quantity"
             />
           </div>
           <button type="submit" class="btn btn-primary">Insert Purchase</button>

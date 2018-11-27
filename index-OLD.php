@@ -108,8 +108,6 @@
             type="text"
             class="form-control"
             name="customer_id"
-            id=""
-            placeholder="Customer ID"
           />
         </div>
         <div class="form-group">
@@ -118,8 +116,6 @@
             type="text"
             class="form-control"
             name="product_id"
-            id=""
-            placeholder="Product ID"
           />
         </div>
         <div class="form-group">
@@ -128,8 +124,6 @@
             type="text"
             class="form-control"
             name="quantity"
-            id=""
-            placeholder="Quantity"
           />
         </div>
         <button type="submit" class="btn btn-primary">Insert Purchase</button>
@@ -157,8 +151,6 @@
             type="text"
             class="form-control"
             name="first_name"
-            id=""
-            placeholder="first_name"
           />
         </div>
         <div class="form-group">
@@ -167,8 +159,6 @@
             type="text"
             class="form-control"
             name="last_name"
-            id=""
-            placeholder="last_name"
           />
         </div>
         <div class="form-group">
@@ -177,8 +167,6 @@
             type="text"
             class="form-control"
             name="city"
-            id=""
-            placeholder="city"
           />
         </div>
         <div class="form-group">
@@ -187,8 +175,6 @@
             type="text"
             class="form-control"
             name="phone_number"
-            id=""
-            placeholder="phone_number"
           />
         </div>
         <div class="form-group">
@@ -197,8 +183,6 @@
             type="text"
             class="form-control"
             name="agent_id"
-            id=""
-            placeholder="agent_id"
           />
         </div>
         <button type="submit" class="btn btn-primary">Insert Purchase</button>

@@ -110,7 +110,6 @@
               type="text"
               class="form-control"
               name="first_name"
-              placeholder="Bob"
             />
           </div>
           <div class="form-group">
@@ -119,7 +118,6 @@
               type="text"
               class="form-control"
               name="last_name"
-              placeholder="Ross"
             />
           </div>
           <div class="form-group">
@@ -128,7 +126,6 @@
               type="text"
               class="form-control"
               name="city"
-              placeholder="London"
             />
           </div>
           <div class="form-group">
@@ -137,7 +134,6 @@
               type="text"
               class="form-control"
               name="phone_number"
-              placeholder="123-4567"
             />
           </div>
           <div class="form-group">
@@ -146,7 +142,6 @@
               type="text"
               class="form-control"
               name="agent_id"
-              placeholder="99"
             />
           </div>
           <button type="submit" class="btn btn-primary">Insert customer</button>
