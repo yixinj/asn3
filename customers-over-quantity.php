@@ -65,7 +65,7 @@
             <tbody>
                 <?php
                 $quantity = (int)$_POST['quantity'];
-                $query = 'SELECT customer.first_name AS first_name, customer.last_name AS last_name, product.product_description AS product_description, purchases.quantity AS quantity FROM purchases, customers, products WHERE AND purchases.quantity > '. $quantity;
+                $query = 'SELECT customer.first_name AS first_name, customer.last_name AS last_name, product.product_description AS product_description, purchases.quantity AS quantity FROM purchases, customers, products WHERE customer.customer_id = purchases.customer_id AND products.product_id = purchases.product_id AND purchases.quantity > '. $quantity;
                 $result = mysqli_query($connection, $query);
                 if (!$result) {
                     die("Querying for customers who bought more than a certain quantity failed.");
