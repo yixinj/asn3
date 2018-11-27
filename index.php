@@ -52,10 +52,12 @@
         Customers
       </div>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to
-          additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Contents</h5>
+        <ul>
+          <li class="card-text">List customers</li>
+          <li class="card-text">Add customers</li>
+        </ul>
+        <a href="customers.php" class="btn btn-primary">Go to customers</a>
       </div>
     </div>
     <div class="card">
@@ -63,10 +65,10 @@
         Products
       </div>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
+        <h5 class="card-title">Contents</h5>
         <p class="card-text">With supporting text below as a natural lead-in to
           additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="products.php" class="btn btn-primary">Go to products</a>
       </div>
     </div>
     <div class="card">
@@ -74,10 +76,10 @@
         Other
       </div>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
+        <h5 class="card-title">Contents</h5>
         <p class="card-text">With supporting text below as a natural lead-in to
           additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="other.php" class="btn btn-primary">Go to other</a>
       </div>
     </div>
   </div>
