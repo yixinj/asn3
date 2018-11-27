@@ -27,3 +27,4 @@ while ($row = mysqli_fetch_assoc($result)) {
         ';
 }
 mysqli_free_result($result);
+?>

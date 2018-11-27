@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Yixin | Customers</title>
+  <title>Yixin | Products</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   <script src="main.js"></script>
@@ -29,11 +29,11 @@
         <li class="nav-item">
           <a class="nav-link" href="index.php">Home</a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="customers.php">Customers <span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item">
-          <a class="nav-link" href="products.php">Products</a>
+          <a class="nav-link" href="customers.php">Customers</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="products.php">Products <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="other.php">Other</a>
@@ -49,25 +49,43 @@
       List all the information about all the customers in alphabetical order by last name. TODO: When a user selects a customer, display all of his/her products that he/she has purchased.
     -->
   <div class="container">
-    <h1 class="section-title">Customers</h1>
+    <h1 class="section-title">Products</h1>
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title">Customer List</h3>
+        <h3 class="card-title">Product List</h3>
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">customer_id</th>
-              <th scope="col">first_name</th>
-              <th scope="col">last_name</th>
-              <th scope="col">city</th>
-              <th scope="col">phone_number</th>
-              <th scope="col">agent_id</th>
+              <th scope="col">product_id</th>
+              <th scope="col">product_description</th>
+              <th scope="col">cost_per_item</th>
+              <th scope="col">items_on_hand</th>
             </tr>
           </thead>
           <tbody>
             <?php
-            // List all the information about all the customers in alphabetical order by last name
-            $query = "SELECT * FROM customers ORDER BY last_name;";
+            // List all the products in alphabetical order by description OR in order by price. Allow the user to decide if the order is ascending or descending for both the description and price.
+
+            $query = "SELECT * FROM products ORDER BY ";
+
+            // Decides if it will be asc or desc price or description. Default = desc price
+            if ($_GET['sort'] == 'asc_price')
+            {
+                $sql .= "cost_per_item ASC";
+            }
+            elseif ($_GET['sort'] == 'asc_description')
+            {
+                $sql .= "product_description DESC";
+            }
+            elseif ($_GET['sort'] == 'desc_description')
+            {
+                $sql .= "product_description ASC";
+            }
+            else
+            {
+                $sql .= "cost_per_item DESC";
+            }
+
             $result = mysqli_query($connection, $query);
             if (!$result) {
                 die("databases query failed.");
@@ -75,12 +93,10 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '
                     <tr>
-                      <th scope="row"><a id=customer' . $row['customer_id'] . ' href="#">' . $row['customer_id'] . '</a></th>
-                      <td>' . $row['first_name'] . '</td>
-                      <td>' . $row['last_name'] . '</td>
-                      <td>' . $row['city'] . '</td>
-                      <td>' . $row['phone_number'] . '</td>
-                      <td>' . $row['agent_id'] . '</td>
+                      <th scope="row">' . $row['product_id'] . '</th>
+                      <td>' . $row['product_description'] . '</td>
+                      <td>' . $row['cost_per_item'] . '</td>
+                      <td>' . $row['items_on_hand'] . '</td>
                     </tr>
                     ';
             }
@@ -89,6 +105,10 @@
             <script src="get-customer-purchases.js"></script>
           </tbody>
         </table>
+        <a class="btn btn-primary" href="products.php?sort=asc_price" role="button">Ascending price</a>
+        <a class="btn btn-primary" href="products.php?sort=desc_price" role="button">Descending price</a>
+        <a class="btn btn-primary" href="products.php?sort=asc_description" role="button">Ascending description</a>
+        <a class="btn btn-primary" href="products.php?sort=desc_description" role="button">Descending description</a>
       </div>
     </div>
   </div>
