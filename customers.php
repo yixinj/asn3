@@ -63,6 +63,7 @@
               <th scope="col">city</th>
               <th scope="col">phone_number</th>
               <th scope="col">agent_id</th>
+              <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -76,12 +77,17 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '
                     <tr>
-                      <th scope="row"><a href="get-customer-purchases.php?customer_id=' . $row['customer_id'] . '">' . $row['customer_id'] . '</a></th>
+                      <th scope="row">' . $row['customer_id'] . '</th>
                       <td>' . $row['first_name'] . '</td>
                       <td>' . $row['last_name'] . '</td>
                       <td>' . $row['city'] . '</td>
                       <td>' . $row['phone_number'] . '</td>
                       <td>' . $row['agent_id'] . '</td>
+                      <td>
+                      <p><a href="get-customer-purchases.php?customer_id=' . $row['customer_id'] . '">View purchases</a></p>
+                      <p><a href="#">Edit phone number</></p>
+                      <p><a href="#">Delete customer</></p>
+                      </td>
                     </tr>
                     ';
             }
@@ -143,7 +149,7 @@
               placeholder="99"
             />
           </div>
-          <button type="submit" class="btn btn-primary">Insert Customer</button>
+          <button type="submit" class="btn btn-primary">Insert customer</button>
         </form>
       </div>
     </div>
@@ -161,15 +167,6 @@
               class="form-control"
               name="customer_id"
               placeholder="10"
-            />
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input
-              type="text"
-              class="form-control"
-              name="phone_number"
-              placeholder="123-4567"
             />
           </div>
           <button type="submit" class="btn btn-primary">Update phone number</button>

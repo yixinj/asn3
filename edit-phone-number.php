@@ -46,17 +46,21 @@
   <?php include 'connect-db.php';?>
 
     <!--
-        TODO: Insert a new customer (prompt for necessary data) Note: Send an error message if they try to insert an existing customer id number (or make your GUI so that it generated the new key for the user)
+      TODO: Update a customer's phone number, prompt for the customer id number, display the current phone number before prompting them for the new phone number. Note: Send an error message if the user doesn't enter an existing customer id (or use your GUI to only allow them to pick from a list of current customers)
     -->
   <div class="container">
     <h1 class="section-title">Customers</h1>
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title">Update Phone Number</h3>
-        <p class="card-text">
-        <?php
+        <h3 class="card-title">Edit Phone Number: Customer 
+          <?php
             // Retrieves form submission
             $customer_id= $_POST["customer_id"];
+            echo '$_POST["customer_id"]';
+          ?>
+        </h3>
+        <p class="card-text">
+        <?php
             $phone_number = $_POST["phone_number"];
 
             // Tries to update phone number

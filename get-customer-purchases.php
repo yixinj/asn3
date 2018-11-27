@@ -86,6 +86,9 @@
             ?>
           </tbody>
         </table>
+        
+        <!-- Back button :) -->
+        <a href="customers.php" class="btn btn-primary">View customers</a>
       </div>
     </div>
   </div>
