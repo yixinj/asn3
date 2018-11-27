@@ -69,17 +69,17 @@
             }
             while ($row = mysqli_fetch_assoc($result)) {
                 // If purchase exists, value of $purchase_exists will be > 0
-                $purchase_exists += $row[''];
+                $purchase_exists += $row['customer_id'];
             }
             mysqli_free_result($result);
 
             // If already purchased, update value
             if($purchase_exists > 0) {
-                $query = 'UPDATE purchases SET quantity = ' . $quantity . ' WHERE customer_id = '. $customer_id . ' AND product_id = ' . $product_id;
+                $query = 'UPDATE purchases SET quantity = quantity + ' . $quantity . ' WHERE customer_id = '. $customer_id . ' AND product_id = ' . $product_id;
                 if (!mysqli_query($connection, $query)) {
-                    die("Error - insert failed: " . mysqli_error($connection));
+                    die("Error - update failed: " . mysqli_error($connection));
                 }
-                echo "Your purchase was added!";
+                echo "Your purchase was updated!";
             }
             // Otherwise, insert into table
             else {
