@@ -89,9 +89,16 @@
                       <a href="edit-phone-number.php?customer_id=' . $row['customer_id'] . '">Edit number</a><br>
                       <a style="color:red" href="delete-customer.php?customer_id=' . $row['customer_id'] . '">Delete</>
                       </td>
-                      <td>' . $row['cus_image'] . '</td>
-                    </tr>
-                    ';
+                      <td>';
+                if($row['cus_image'] = null) {
+                  echo '<a href="edit-customer-image.php?customer_id=' . $row['customer_id'] . '">Upload image</a><br>';
+                }
+                else {
+                  echo '<img class=".customer-image" src="' . $row['cus_image'] . '" alt="Customer Image">';
+                }
+                echo '</td>
+                      </tr>';
+                
             }
             mysqli_free_result($result);
             mysqli_close($connection);
