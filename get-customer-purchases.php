@@ -49,7 +49,7 @@
   <div class="container">
     <!-- Echos the customer ID -->
     <?php
-    echo '<h1 class="section title">Customer '. $_GET['customer_id'] . '</h1>'
+    echo '<h1 class="section-title">Customer '. $_GET['customer_id'] . '</h1>'
     ?>
     <div class="card">
       <div class="card-body">
