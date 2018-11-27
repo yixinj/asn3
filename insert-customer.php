@@ -53,6 +53,7 @@
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Insert Customer</h3>
+        <p class="card-text">
         <?php
             // Retrieves form submission
             $first_name= $_POST["first_name"];
@@ -65,7 +66,7 @@
             $query1= 'select max(customer_id) as maxid from customers';
             $result=mysqli_query($connection,$query1);
             if (!$result) {
-                    die("database max query failed.");
+                die("database max query failed.");
             }
             $row=mysqli_fetch_assoc($result);
             $newkey = intval($row["maxid"]) + 1;
@@ -76,9 +77,10 @@
             if (!mysqli_query($connection, $query)) {
                 die("Error: insert failed: " . mysqli_error($connection));
             }
-            echo "Your customer was added!";
+            echo 'Your customer was added!';
             mysqli_close($connection);
         ?>
+        </p>
         <!-- Back button :) -->
         <button type="button" class="btn btn-primary" onclick="goBack()">Go back</button>
       </div>
