@@ -74,12 +74,12 @@
               placeholder="123-4567"
             />
           </div>
-          <button type="submit" class="btn btn-primary">Update phone number</button>
+          <button type="submit" class="btn btn-primary">Update</button>
         </form>
         <?php
             $phone_number = $_POST["phone_number"];
             
-            // Updates phone number if phone number exists
+            // Updates phone number if phone number form is filled out
             if ($phone_number) { 
               $query = 'UPDATE customers SET phone_number = "' . $phone_number . '" WHERE customer_id = "'. $customer_id . '"';
               if (!mysqli_query($connection, $query)) {
@@ -88,13 +88,14 @@
               echo 'Customer phone number was edited!';
             }
             else {
-              echo 'Test';
+              // Otherwise do nothing
+              echo '';
             }
             mysqli_close($connection);
         ?>
         </p>
         <!-- Back button :) -->
-        <a href="customers.php" class="btn btn-primary">View customers</a>
+        <a href="customers.php" class="btn btn-secondary">View customers</a>
       </div>
     </div>
   </div>
