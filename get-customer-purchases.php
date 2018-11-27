@@ -49,7 +49,7 @@
   <div class="container">
     <h1 class="section-title">Customers</h1>
     <?php
-    echo '<h1 class="section title">Customer '. $_GET['sort'] . '</h1>'
+    echo '<h1 class="section title">Customer '. $_GET['customer_id'] . '</h1>'
     ?>
     <div class="card">
       <div class="card-body">
@@ -67,7 +67,7 @@
             <?php
             // Select all product information from a customer's purchases based on customer ID
             $query = "SELECT * FROM products WHERE product_id IN (SELECT purchases.product_id FROM purchases, customers WHERE purchases.customer_id = customers.customer_id AND ";
-            $query .= "customers.customer_id = " . $_GET['sort'] . ")";
+            $query .= "customers.customer_id = " . $_GET['customer_id'] . ")";
             $result = mysqli_query($connection, $query);
             if (!$result) {
                 die("databases query failed.");
