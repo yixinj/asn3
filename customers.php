@@ -45,11 +45,12 @@
   <!-- Connect to DB -->
   <?php include 'connect-db.php';?>
 
-  <!--
-      List all the information about all the customers in alphabetical order by last name. When a user selects a customer, display all of his/her products that he/she has purchased.
-    -->
+
   <div class="container">
     <h1 class="section-title">Customers</h1>
+    <!--
+      List all the information about all the customers in alphabetical order by last name. When a user selects a customer, display all of his/her products that he/she has purchased.
+    -->
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Customer List</h3>
@@ -88,6 +89,67 @@
             ?>
           </tbody>
         </table>
+      </div>
+    </div>
+    <!--
+      TODO: Insert a new customer (prompt for necessary data) Note: Send an error message if they try to insert an existing customer id number (or make your GUI so that it generated the new key for the user)
+    -->
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Insert Customer</h4>
+        <form action="insert-customer.php" method="post">
+          <div class="form-group">
+            <label for="">first_name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="first_name"
+              id=""
+              placeholder="first_name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">last_name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="last_name"
+              id=""
+              placeholder="last_name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">city</label>
+            <input
+              type="text"
+              class="form-control"
+              name="city"
+              id=""
+              placeholder="city"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">phone_number</label>
+            <input
+              type="text"
+              class="form-control"
+              name="phone_number"
+              id=""
+              placeholder="phone_number"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">agent_id</label>
+            <input
+              type="text"
+              class="form-control"
+              name="agent_id"
+              id=""
+              placeholder="agent_id"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Insert Customer</button>
+        </form>
       </div>
     </div>
   </div>

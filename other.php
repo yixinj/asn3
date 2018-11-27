@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Yixin | Customers</title>
+  <title>Yixin | Other</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   <script src="main.js"></script>
@@ -29,14 +29,14 @@
         <li class="nav-item">
           <a class="nav-link" href="index.php">Home</a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="customers.php">Customers <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link" href="customers.php">Customers</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="products.php">Products</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="other.php">Other</a>
+        <li class="nav-item active">
+          <a class="nav-link" href="other.php">Other <span class="sr-only">(current)</span></a>
         </li>
       </ul>
     </div>
@@ -45,47 +45,47 @@
   <!-- Connect to DB -->
   <?php include 'connect-db.php';?>
 
-  <!-- When a user selects a customer, display all of his/her products that he/she has purchased. -->
+  <!--
+        TODO: Insert a new purchase (prompt for necessary data) Note: Send an error message if they try to give an invalid customer id number or invalid product number (or make your GUI so that it doesnt allow them to pick those). If the user tries to let a customer purchase a product they already have purchased, instead just let them change the quantity that the customer will have purchased of that product.  Don't allow the quantity to go lower, just higher by the amount they want now.
+      -->
   <div class="container">
-    <!-- Echos the customer ID -->
-    <?php
-    echo '<h1 class="section-title">Customer '. $_GET['customer_id'] . '</h1>'
-    ?>
+    <h1 class="section-title">Other</h1>
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title">Purchased Products</h3>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">product_id</th>
-              <th scope="col">product_description</th>
-              <th scope="col">cost_per_item</th>
-              <th scope="col">items_on_hand</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            // Select all product information from a customer's purchases based on customer ID
-            $query = "SELECT * FROM products WHERE product_id IN (SELECT purchases.product_id FROM purchases, customers WHERE purchases.customer_id = customers.customer_id AND ";
-            $query .= "customers.customer_id = " . $_GET['customer_id'] . ")";
-            $result = mysqli_query($connection, $query);
-            if (!$result) {
-                die("databases query failed.");
-            }
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo '
-                    <tr>
-                      <th scope="row">' . $row['product_id'] . '</th>
-                      <td>' . $row['product_description'] . '</td>
-                      <td>' . $row['cost_per_item'] . '</td>
-                      <td>' . $row['items_on_hand'] . '</td>
-                    </tr>
-                    ';
-            }
-            mysqli_free_result($result);
-            ?>
-          </tbody>
-        </table>
+        <h3 class="card-title">Insert Purchase</h3>
+        <form action="insert-purchase.php" method="post">
+          <div class="form-group">
+            <label for="">customer_id</label>
+            <input
+              type="text"
+              class="form-control"
+              name="customer_id"
+              id=""
+              placeholder="Customer ID"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">product_id</label>
+            <input
+              type="text"
+              class="form-control"
+              name="product_id"
+              id=""
+              placeholder="Product ID"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">quantity</label>
+            <input
+              type="text"
+              class="form-control"
+              name="quantity"
+              id=""
+              placeholder="Quantity"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Insert Purchase</button>
+        </form>
       </div>
     </div>
   </div>
