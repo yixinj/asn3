@@ -235,7 +235,7 @@
     -->
 
     <!--
-      TODO: Delete a customer (Prompt for the customer id to delete) Note: Send a warning message if they try to delete a non existing customer id number (or make your GUI so that they can only pick an existing customer from a list)
+      Delete a customer (Prompt for the customer id to delete) Note: Send a warning message if they try to delete a non existing customer id number (or make your GUI so that they can only pick an existing customer from a list)
     -->
     <div class="container">
       <h1>Delete a customer</h1>

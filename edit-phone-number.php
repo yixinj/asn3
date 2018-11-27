@@ -46,7 +46,7 @@
   <?php include 'connect-db.php';?>
 
     <!--
-      TODO: Update a customer's phone number, prompt for the customer id number, display the current phone number before prompting them for the new phone number. Note: Send an error message if the user doesn't enter an existing customer id (or use your GUI to only allow them to pick from a list of current customers)
+      Update a customer's phone number, prompt for the customer id number, display the current phone number before prompting them for the new phone number. Only allow them to pick from a list of current customers.
     -->
   <div class="container">
     <h1 class="section-title">Customers</h1>
