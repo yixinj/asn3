@@ -48,11 +48,8 @@
   <div class="container">
     <h1>Documentation</h1>
     <div class="card">
-      <div class="card-header">
-        Customers
-      </div>
       <div class="card-body">
-        <h5 class="card-title">Contents</h5>
+        <h5 class="card-title">Customers</h5>
         <ul>
           <li class="card-text">List customers</li>
           <li class="card-text">Add customers</li>
