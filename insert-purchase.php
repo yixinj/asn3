@@ -94,16 +94,3 @@
 </body>
 
 </html>
-<?php
-// Results from post (clicking submit)
-   $customer_id =  $_POST["customer_id"];
-   $product_id = $_POST["product_id"];
-   $quantity =$_POST["quantity"];
-   
-   $query = 'INSERT INTO purchases values("' . $customer_id . '","' . $product_id . '","' . $quantity . '")';
-   if (!mysqli_query($connection, $query)) {
-        die("Error: insert failed" . mysqli_error($connection));
-    }
-   echo "Your purchase was added!";
-   mysqli_close($connection);
-?>
