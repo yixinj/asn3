@@ -94,7 +94,7 @@
                   echo '<a href="edit-customer-image.php?customer_id=' . $row['customer_id'] . '">Upload image</a><br>';
                 }
                 else {
-                  echo '<img class=".customer-image" src="' . $row['cus_image'] . '" alt="Customer Image">';
+                  echo '<img class="customer-image" src="' . $row['cus_image'] . '" alt="Customer Image">';
                 }
                 echo '</td>
                       </tr>';
