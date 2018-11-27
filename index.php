@@ -75,6 +75,7 @@
         <h3 class="card-title">Other</h3>
         <ul>
           <li class="card-text">Insert purchases</li>
+          <li class="card-text">List all customers that have bought more than a given quantity of any product</li>
           <li class="card-text">List total number of purchases given product ID</li>
         </ul>
         <a href="other.php" class="btn btn-primary">Go to section</a>

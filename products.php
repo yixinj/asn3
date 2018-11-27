@@ -110,6 +110,44 @@
         <a class="btn btn-primary" href="products.php?sort=desc_description" role="button">Descending description</a>
       </div>
     </div>
+    <!-- TODO: List the description of any product that has never been purchased -->
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Unpurchased Products</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">product_id</th>
+              <th scope="col">product_description</th>
+              <th scope="col">cost_per_item</th>
+              <th scope="col">items_on_hand</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            // Find products that have never been purchased
+            $query = "SELECT * FROM products WHERE product_id NOT IN (SELECT product_id FROM purchases)";
+            $result = mysqli_query($connection, $query);
+            if (!$result) {
+                die("Querying from products/purchases failed.");
+            }
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '
+                    <tr>
+                      <th scope="row">' . $row['product_id'] . '</th>
+                      <td>' . $row['product_description'] . '</td>
+                      <td>' . $row['cost_per_item'] . '</td>
+                      <td>' . $row['items_on_hand'] . '</td>
+                    </tr>
+                    ';
+            }
+            mysqli_free_result($result);
+            mysqli_close($connection);
+            ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
   <footer class="footer">

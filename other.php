@@ -45,11 +45,9 @@
   <!-- Connect to DB -->
   <?php include 'connect-db.php';?>
 
-  <!--
-        TODO: Insert a new purchase (prompt for necessary data) Note: Send an error message if they try to give an invalid customer id number or invalid product number (or make your GUI so that it doesnt allow them to pick those). If the user tries to let a customer purchase a product they already have purchased, instead just let them change the quantity that the customer will have purchased of that product.  Don't allow the quantity to go lower, just higher by the amount they want now.
-      -->
   <div class="container">
     <h1 class="section-title">Other</h1>
+    <!-- Insert purchase -->
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Insert Purchase</h3>
@@ -80,6 +78,105 @@
           </div>
           <button type="submit" class="btn btn-primary">Insert Purchase</button>
         </form>
+      </div>
+    </div>
+    <!--
+      TODO: List all the customer names who bought more than a given quantity of any product. Prompt the user for the quantity. Display the description of the product and quantity purchased also.
+    -->
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Customer List</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">customer_id</th>
+              <th scope="col">first_name</th>
+              <th scope="col">last_name</th>
+              <th scope="col">city</th>
+              <th scope="col">phone_number</th>
+              <th scope="col">agent_id</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            // List all the information about all the customers in alphabetical order by last name
+            $query = "SELECT * FROM customers ORDER BY last_name;";
+            $result = mysqli_query($connection, $query);
+            if (!$result) {
+                die("databases query failed.");
+            }
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '
+                    <tr>
+                      <th scope="row">' . $row['customer_id'] . '</th>
+                      <td>' . $row['first_name'] . '</td>
+                      <td>' . $row['last_name'] . '</td>
+                      <td>' . $row['city'] . '</td>
+                      <td>' . $row['phone_number'] . '</td>
+                      <td>' . $row['agent_id'] . '</td>
+                      <td>
+                      <a href="get-customer-purchases.php?customer_id=' . $row['customer_id'] . '">Purchases</a><br>
+                      <a href="edit-phone-number.php?customer_id=' . $row['customer_id'] . '">Edit number</a><br>
+                      <a style="color:red" href="delete-customer.php?customer_id=' . $row['customer_id'] . '">Delete</>
+                      </td>
+                    </tr>
+                    ';
+            }
+            mysqli_free_result($result);
+            ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!--
+      TODO: List the total number of purchases for a particular product and the product description and the total money made in sales for that product (cost * quantity)Prompt the user for the product id (Note: display an error message if the the product does not exist - or create the GUI in a way that the user cant pick a product that doesnt exist)
+    -->
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Customer List</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">customer_id</th>
+              <th scope="col">first_name</th>
+              <th scope="col">last_name</th>
+              <th scope="col">city</th>
+              <th scope="col">phone_number</th>
+              <th scope="col">agent_id</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            // List all the information about all the customers in alphabetical order by last name
+            $query = "SELECT * FROM customers ORDER BY last_name;";
+            $result = mysqli_query($connection, $query);
+            if (!$result) {
+                die("databases query failed.");
+            }
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '
+                    <tr>
+                      <th scope="row">' . $row['customer_id'] . '</th>
+                      <td>' . $row['first_name'] . '</td>
+                      <td>' . $row['last_name'] . '</td>
+                      <td>' . $row['city'] . '</td>
+                      <td>' . $row['phone_number'] . '</td>
+                      <td>' . $row['agent_id'] . '</td>
+                      <td>
+                      <a href="get-customer-purchases.php?customer_id=' . $row['customer_id'] . '">Purchases</a><br>
+                      <a href="edit-phone-number.php?customer_id=' . $row['customer_id'] . '">Edit number</a><br>
+                      <a style="color:red" href="delete-customer.php?customer_id=' . $row['customer_id'] . '">Delete</>
+                      </td>
+                    </tr>
+                    ';
+            }
+            mysqli_free_result($result);
+            mysqli_close($connection);
+            ?>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
