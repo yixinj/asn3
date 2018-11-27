@@ -85,9 +85,9 @@
                 ?>
             </tbody>
             </table>
-        </div>
         <!-- Back button :) -->
         <a href="other.php" class="btn btn-secondary">View other</a>
+        </div>
     </div>
   </div>
 
