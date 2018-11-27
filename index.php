@@ -46,7 +46,7 @@
   <?php include 'connect-db.php';?>
 
   <div class="container">
-    <h1>Documentation</h1>
+    <h1 id="documentation-title">Documentation</h1>
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Customers</h3>

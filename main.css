@@ -1,3 +1,9 @@
+/* GLOBAL */
 .card {
     margin: 2em 0 2em 0;
+}
+
+/* Index */
+#documentation-title {
+    margin-top: 1em;
 }
