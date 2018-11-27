@@ -86,7 +86,7 @@
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Customers Over Quantity</h3>
-        <form action="/customers-over-quantity.php" method="post">
+        <form action="customers-over-quantity.php" method="post">
           <div class="form-group">
             <label for="">Quantity</label>
             <input
