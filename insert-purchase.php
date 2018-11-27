@@ -46,7 +46,7 @@
   <?php include 'connect-db.php';?>
 
   <!--
-        Insert a new purchase (prompt for necessary data). Send an error message if they try to give an invalid customer id number or invalid product number. TODO: If the user tries to let a customer purchase a product they already have purchased, instead just let them change the quantity that the customer will have purchased of that product.  Don't allow the quantity to go lower, just higher by the amount they want now.
+        Insert a new purchase (prompt for necessary data). Send an error message if they try to give an invalid customer id number or invalid product number. If the user tries to let a customer purchase a product they already have purchased, instead just let them change the quantity that the customer will have purchased of that product.  Don't allow the quantity to go lower, just higher by the amount they want now.
       -->
   <div class="container">
     <h1 class="section-title">Other</h1>
@@ -75,11 +75,17 @@
 
             // If already purchased, update value
             if($purchase_exists > 0) {
-                $query = 'UPDATE purchases SET quantity = quantity + ' . $quantity . ' WHERE customer_id = '. $customer_id . ' AND product_id = ' . $product_id;
-                if (!mysqli_query($connection, $query)) {
-                    die("Error - update failed: " . mysqli_error($connection));
+                // Makes sure they are adding and not deducting
+                if($quantity > 0){
+                    $query = 'UPDATE purchases SET quantity = quantity + ' . $quantity . ' WHERE customer_id = '. $customer_id . ' AND product_id = ' . $product_id;
+                    if (!mysqli_query($connection, $query)) {
+                        die("Error - update failed: " . mysqli_error($connection));
+                    }
+                    echo "Your purchase was updated!";
                 }
-                echo "Your purchase was updated!";
+                else {
+                    echo "Quantity should be positive!";
+                }
             }
             // Otherwise, insert into table
             else {

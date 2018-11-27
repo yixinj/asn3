@@ -83,6 +83,7 @@
                     ';
             }
             mysqli_free_result($result);
+            mysqli_close($connection);
             ?>
           </tbody>
         </table>

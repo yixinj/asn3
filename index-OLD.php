@@ -324,6 +324,9 @@
     -->
     <!-- ALTER TABLE customers ADD cus_image char(100); -->
 
+    <!-- TODO: close all connections
+         TODO: free all results -->
+
     <!-- Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
