@@ -84,9 +84,9 @@
                       <td>' . $row['phone_number'] . '</td>
                       <td>' . $row['agent_id'] . '</td>
                       <td>
-                      <a href="get-customer-purchases.php?customer_id=' . $row['customer_id'] . '">View purchases </a>
-                      <a href="edit-phone-number.php?customer_id=' . $row['customer_id'] . '">Edit number </>
-                      <a href="#" style="color: red">Delete </>
+                      <a href="get-customer-purchases.php?customer_id=' . $row['customer_id'] . '">Purchases   </a>
+                      <a href="edit-phone-number.php?customer_id=' . $row['customer_id'] . '">Edit number   </>
+                      <a href="#" style="color: red">Delete</>
                       </td>
                     </tr>
                     ';

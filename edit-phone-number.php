@@ -55,8 +55,8 @@
         <h3 class="card-title">Edit Phone Number: Customer 
           <?php
             // Retrieves form submission
-            $customer_id= $_POST["customer_id"];
-            echo '$_POST["customer_id"]';
+            $customer_id= $_GET["customer_id"];
+            echo $customer_id;
           ?>
         </h3>
         <p class="card-text">
