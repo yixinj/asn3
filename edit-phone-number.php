@@ -60,7 +60,7 @@
           ?>
         </h3>
         <p class="card-text">
-        <form action="insert-customer.php?customer_id=
+        <form action="edit-phone-number.php?customer_id=
           <?php
             echo $customer_id . ' ';
           ?>"
