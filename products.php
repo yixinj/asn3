@@ -45,9 +45,6 @@
   <!-- Connect to DB -->
   <?php include 'connect-db.php';?>
 
-  <!--
-      List all the information about all the customers in alphabetical order by last name. TODO: When a user selects a customer, display all of his/her products that he/she has purchased.
-    -->
   <div class="container">
     <h1 class="section-title">Products</h1>
     <div class="card">
@@ -105,6 +102,8 @@
             <script src="get-customer-purchases.js"></script>
           </tbody>
         </table>
+
+        <!-- Allows sorting sort -->
         <a class="btn btn-primary" href="products.php?sort=asc_price" role="button">Ascending price</a>
         <a class="btn btn-primary" href="products.php?sort=desc_price" role="button">Descending price</a>
         <a class="btn btn-primary" href="products.php?sort=asc_description" role="button">Ascending description</a>

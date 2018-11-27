@@ -75,7 +75,7 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '
                     <tr>
-                      <th scope="row"><a id=customer' . $row['customer_id'] . ' href="#">' . $row['customer_id'] . '</a></th>
+                      <th scope="row"><a href="get-customer-purchases.php?customer_id=' . $row['customer_id'] . '">' . $row['customer_id'] . '</a></th>
                       <td>' . $row['first_name'] . '</td>
                       <td>' . $row['last_name'] . '</td>
                       <td>' . $row['city'] . '</td>
@@ -86,7 +86,6 @@
             }
             mysqli_free_result($result);
             ?>
-            <script src="get-customer-purchases.js"></script>
           </tbody>
         </table>
       </div>

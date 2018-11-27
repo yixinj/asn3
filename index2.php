@@ -69,7 +69,7 @@
     </div>
 
     <!--
-      List all the products in alphabetical order by description OR in order by price. TODO: Allow the user to decide if the order is ascending or descending for both the description and price.
+      List all the products in alphabetical order by description OR in order by price. Allow the user to decide if the order is ascending or descending for both the description and price.
     -->
     <div class="container">
       <h1>Product Information</h1>
