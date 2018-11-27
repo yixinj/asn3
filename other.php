@@ -53,7 +53,7 @@
         <h3 class="card-title">Insert Purchase</h3>
         <form action="insert-purchase.php" method="post">
           <div class="form-group">
-            <label for="">customer_id</label>
+            <label for="">Customer ID</label>
             <input
               type="text"
               class="form-control"
@@ -61,7 +61,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="">product_id</label>
+            <label for="">Product ID</label>
             <input
               type="text"
               class="form-control"
@@ -69,7 +69,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="">quantity</label>
+            <label for="">Quantity</label>
             <input
               type="text"
               class="form-control"
