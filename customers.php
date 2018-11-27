@@ -99,53 +99,48 @@
         <h3 class="card-title">Insert Customer</h4>
         <form action="insert-customer.php" method="post">
           <div class="form-group">
-            <label for="">first_name</label>
+            <label>First Name</label>
             <input
               type="text"
               class="form-control"
               name="first_name"
-              id=""
-              placeholder="first_name"
+              placeholder="Bob"
             />
           </div>
           <div class="form-group">
-            <label for="">last_name</label>
+            <label>Last Name</label>
             <input
               type="text"
               class="form-control"
               name="last_name"
-              id=""
-              placeholder="last_name"
+              placeholder="Ross"
             />
           </div>
           <div class="form-group">
-            <label for="">city</label>
+            <label>City</label>
             <input
               type="text"
               class="form-control"
               name="city"
-              id=""
-              placeholder="city"
+              placeholder="London"
             />
           </div>
           <div class="form-group">
-            <label for="">phone_number</label>
+            <label>Phone Number</label>
             <input
               type="text"
               class="form-control"
               name="phone_number"
-              id=""
-              placeholder="phone_number"
+              placeholder="1234567890"
             />
           </div>
           <div class="form-group">
-            <label for="">agent_id</label>
+            <label>Agent ID</label>
             <input
               type="text"
               class="form-control"
               name="agent_id"
-              id=""
-              placeholder="agent_id"
+              placeholder="99"
             />
           </div>
           <button type="submit" class="btn btn-primary">Insert Customer</button>
