@@ -85,6 +85,7 @@
                     ';
             }
             mysqli_free_result($result);
+            ?>
             <script src="get-customer-purchases.js"></script>
           </tbody>
         </table>
