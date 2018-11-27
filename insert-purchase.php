@@ -56,12 +56,12 @@
         <p class="card-text">
         <?php
             // Retrieves form submission
-            $customer_id =  $_POST["customer_id"];
-            $product_id = $_POST["product_id"];
-            $quantity =$_POST["quantity"];
+            $customer_id =  (int)$_POST["customer_id"];
+            $product_id = (int)$_POST["product_id"];
+            $quantity =  (int)$_POST["quantity"];
 
             // Inserts into table
-            $query = 'INSERT INTO purchases values("' . $customer_id . '","' . $product_id . '","' . $quantity . '")';
+            $query = 'INSERT INTO purchases(customer_id, product_id, quantity) values(' . $customer_id . ',' . $product_id . ',"' . $quantity . '")';
             if (!mysqli_query($connection, $query)) {
                 die("Error - insert failed: " . mysqli_error($connection));
             }

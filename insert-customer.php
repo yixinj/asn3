@@ -60,7 +60,7 @@
             $last_name = $_POST["last_name"];
             $city = $_POST["city"];
             $phone_number = $_POST["phone_number"];
-            $agent_id = $_POST["agent_id"];
+            $agent_id = (int)$_POST["agent_id"];  // Casts to int
 
             // Finds largest ID to autoindex
             $query1= 'SELECT MAX(customer_id) AS maxid FROM customers';
