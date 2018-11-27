@@ -48,7 +48,7 @@
   <div class="container">
     <h1 class="section-title">Other</h1>
     <!--
-      TODO: List all the customer names who bought more than a given quantity of any product. Prompt the user for the quantity. Display the description of the product and quantity purchased also.
+      List all the customer names who bought more than a given quantity of any product. Prompt the user for the quantity. Display the description of the product and quantity purchased also.
     -->
     <div class="card">
         <div class="card-body">

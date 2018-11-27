@@ -87,7 +87,7 @@
                     echo "Quantity should be positive!";
                 }
             }
-            // Otherwise, insert into table
+            // Otherwise, insert values into purchases
             else {
                 $query = 'INSERT INTO purchases(customer_id, product_id, quantity) VALUES(' . $customer_id . ',' . $product_id . ',"' . $quantity . '")';
                 if (!mysqli_query($connection, $query)) {
