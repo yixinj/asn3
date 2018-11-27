@@ -60,15 +60,36 @@
           ?>
         </h3>
         <p class="card-text">
+        <form action="insert-customer.php?customer_id=
+          <?php
+            echo $customer_id . ' ';
+          ?>"
+          method="post">
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input
+              type="text"
+              class="form-control"
+              name="phone_number"
+              placeholder="123-4567"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Update phone number</button>
+        </form>
         <?php
             $phone_number = $_POST["phone_number"];
-
-            // Tries to update phone number
-            $query = 'UPDATE customers SET phone_number = "' . $phone_number . '" WHERE customer_id = "'. $customer_id . '"';
-            if (!mysqli_query($connection, $query)) {
-                die("Error - update failed: " . mysqli_error($connection));
+            
+            // Updates phone number if phone number exists
+            if ($phone_number) { 
+              $query = 'UPDATE customers SET phone_number = "' . $phone_number . '" WHERE customer_id = "'. $customer_id . '"';
+              if (!mysqli_query($connection, $query)) {
+                  die("Error - update failed: " . mysqli_error($connection));
+              }
+              echo 'Customer phone number was edited!';
             }
-            echo 'Customer phone number was edited!';
+            else {
+              echo 'Test';
+            }
             mysqli_close($connection);
         ?>
         </p>
