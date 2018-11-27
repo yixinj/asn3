@@ -16,7 +16,7 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">CS3319 Assignment 3</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
       data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -84,7 +84,7 @@
 
   <footer class="footer">
     <div class="container">
-      <span class="text-muted">Assignment 3 by Yixin Jiang</span>
+      <span class="text-muted">CS3319 assignment 3 | by Yixin Jiang.</span>
     </div>
   </footer>
 
