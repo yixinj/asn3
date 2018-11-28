@@ -16,5 +16,5 @@ footer {
 /*  Customers */
 .customer-image {
     max-width: 150px;
-    max-height: 150px;
+    height: 100px;
 }

@@ -320,7 +320,7 @@
     <!-- $query = "SELECT SUM(purchases.quantity), product.product_description, (products.cost_per_item * purchases.quantity) FROM products, purchases WHERE products.product_id = <input>" AND products.product_id = purchases.product_id GROUP BY purchases.product_id; -->
 
     <!--
-      TODO: Allow the user to click on one of the customers and if this field is null then let the user find an image online and add the url to the officials table AND display the image in your user interface. If the field is not null, display the image at the url..
+      Allow the user to click on one of the customers and if this field is null then let the user find an image online and add the url to the officials table AND display the image in your user interface. If the field is not null, display the image at the url..
     -->
     <!-- ALTER TABLE customers ADD cus_image char(100); -->
 
