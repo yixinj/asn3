@@ -71,11 +71,11 @@
             }
             elseif ($_GET['sort'] == 'asc_description')
             {
-                $query .= "product_description DESC";
+                $query .= "product_description ASC";
             }
             elseif ($_GET['sort'] == 'desc_description')
             {
-                $query .= "product_description ASC";
+                $query .= "product_description DESC";
             }
             else
             {
