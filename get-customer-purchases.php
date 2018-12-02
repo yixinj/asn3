@@ -47,9 +47,9 @@
 
   <!-- When a user selects a customer, display all of his/her products that he/she has purchased. -->
   <div class="container">
-    <!-- Echos the customer ID -->
     <?php
-    echo '<h1 class="section-title">Customer '. $_GET['customer_id'] . '</h1>'
+      // Gets the customer's ID
+      echo '<h1 class="section-title">Customer '. $_GET['customer_id'] . '</h1>'
     ?>
     <div class="card">
       <div class="card-body">
@@ -65,25 +65,26 @@
           </thead>
           <tbody>
             <?php
-            // Select all product information from a customer's purchases based on customer ID
-            $query = "SELECT * FROM products WHERE product_id IN (SELECT purchases.product_id FROM purchases, customers WHERE purchases.customer_id = customers.customer_id AND ";
-            $query .= "customers.customer_id = " . $_GET['customer_id'] . ")";
-            $result = mysqli_query($connection, $query);
-            if (!$result) {
-                die("databases query failed.");
-            }
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo '
-                    <tr>
-                      <th scope="row">' . $row['product_id'] . '</th>
-                      <td>' . $row['product_description'] . '</td>
-                      <td>' . $row['cost_per_item'] . '</td>
-                      <td>' . $row['items_on_hand'] . '</td>
-                    </tr>
-                    ';
-            }
-            mysqli_free_result($result);
-            mysqli_close($connection);
+                // Select all product information from a customer's purchases based on customer ID
+                $query = "SELECT * FROM products WHERE product_id IN (SELECT purchases.product_id FROM purchases, customers WHERE purchases.customer_id = customers.customer_id AND ";
+                $query .= "customers.customer_id = " . $_GET['customer_id'] . ")";
+                $result = mysqli_query($connection, $query);
+                if (!$result) {
+                    die("databases query failed.");
+                }
+                // Creates table
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '
+                        <tr>
+                          <th scope="row">' . $row['product_id'] . '</th>
+                          <td>' . $row['product_description'] . '</td>
+                          <td>' . $row['cost_per_item'] . '</td>
+                          <td>' . $row['items_on_hand'] . '</td>
+                        </tr>
+                        ';
+                }
+                mysqli_free_result($result);
+                mysqli_close($connection);
             ?>
           </tbody>
         </table>

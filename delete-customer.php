@@ -65,7 +65,7 @@
             if (!mysqli_query($connection, $query)) {
                 die("Error - delete failed: " . mysqli_error($connection));
             }
-            echo 'Customer phone number was edited!';
+            echo 'Customer was deleted!';
             mysqli_close($connection);
         ?>
         </p>

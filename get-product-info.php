@@ -54,8 +54,9 @@
         <div class="card-body">
             <h3 class="card-title">
             <?php
-            $product_id = (int)$_POST['product_id'];
-            echo 'Product Info for Product with ID ' . $product_id;
+              // Retrieves product ID for the title
+              $product_id = (int)$_POST['product_id'];
+              echo 'Product Info for Product with ID ' . $product_id;
             ?>
             </h3>
             <table class="table">
@@ -68,11 +69,15 @@
             </thead>
             <tbody>
                 <?php
+                // SQL query
                 $query = 'SELECT SUM(purchases.quantity) AS total_purchases, products.product_description AS product_description, (products.cost_per_item * SUM(purchases.quantity)) AS money_made FROM products, purchases WHERE products.product_id = ' . $product_id . ' AND products.product_id = purchases.product_id GROUP BY purchases.product_id';
+                
                 $result = mysqli_query($connection, $query);
                 if (!$result) {
                     die("Product with given ID does not exist.");
                 }
+                
+                // Creates table
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '
                         <tr>

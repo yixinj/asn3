@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <!-- OLD INDEX FOR TRACKING PURPOSES -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Yixin | CS3319 Asn3</title>

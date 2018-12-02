@@ -45,9 +45,9 @@
   <!-- Connect to DB -->
   <?php include 'connect-db.php';?>
 
-    <!--
-        Insert a new customer (prompt for necessary data). Auto generates the new key for the user.
-    -->
+  <!--
+    Insert a new customer (prompt for necessary data). Auto generates the new key for the user.
+  -->
   <div class="container">
     <h1 class="section-title">Customers</h1>
     <div class="card">

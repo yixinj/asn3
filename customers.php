@@ -49,7 +49,7 @@
   <div class="container">
     <h1 class="section-title">Customers</h1>
     <!--
-      List all the information about all the customers in alphabetical order by last name. When a user selects a customer, display all of his/her products that he/she has purchased.
+      List all the information about all the customers in alphabetical order by last name. When a user selects a customer, display all of his/her products that he/she has purchased. Allow deletion and editing number. Also shows image thumbnail.
     -->
     <div class="card">
       <div class="card-body">
@@ -75,6 +75,8 @@
             if (!$result) {
                 die("databases query failed.");
             }
+            
+            // Creates table
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '
                     <tr>
@@ -91,10 +93,10 @@
                       </td>
                       <td>';
                 if($row['cus_image'] === null) {
-                  echo '<a href="edit-customer-image.php?customer_id=' . $row['customer_id'] . '">Upload image</a><br>';
+                    echo '<a href="edit-customer-image.php?customer_id=' . $row['customer_id'] . '">Upload image</a><br>';
                 }
                 else {
-                  echo '<img class="customer-image" src="' . $row['cus_image'] . '" alt="Customer Image">';
+                    echo '<img class="customer-image" src="' . $row['cus_image'] . '" alt="Customer Image">';
                 }
                 echo '</td>
                       </tr>';
@@ -108,7 +110,7 @@
       </div>
     </div>
     <!--
-      Insert a new customer (prompt for necessary data). Auto generates the new key for the user
+      Form to insert a new customer (prompt for necessary data). Auto generates the new key for the user.
     -->
     <div class="card">
       <div class="card-body">

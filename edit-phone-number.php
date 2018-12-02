@@ -45,18 +45,18 @@
   <!-- Connect to DB -->
   <?php include 'connect-db.php';?>
 
-    <!--
-      Update a customer's phone number, prompt for the customer id number, display the current phone number before prompting them for the new phone number. Only allow them to pick from a list of current customers.
-    -->
+  <!--
+    Update a customer's phone number, prompt for the customer id number, display the current phone number before prompting them for the new phone number. Only allow them to pick from a list of current customers.
+  -->
   <div class="container">
     <h1 class="section-title">Customers</h1>
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Edit Phone Number: Customer 
           <?php
-            // Retrieves form submission
-            $customer_id= $_GET["customer_id"];
-            echo $customer_id;
+              // Retrieves form submission
+              $customer_id= $_GET["customer_id"];
+              echo $customer_id;
           ?>
         </h3>
         <p class="card-text">
@@ -80,15 +80,15 @@
             
             // Updates phone number if phone number form is filled out
             if ($phone_number) { 
-              $query = 'UPDATE customers SET phone_number = "' . $phone_number . '" WHERE customer_id = "'. $customer_id . '"';
-              if (!mysqli_query($connection, $query)) {
-                  die("Error - update failed: " . mysqli_error($connection));
-              }
-              echo 'Customer phone number was edited!';
+                $query = 'UPDATE customers SET phone_number = "' . $phone_number . '" WHERE customer_id = "'. $customer_id . '"';
+                if (!mysqli_query($connection, $query)) {
+                    die("Error - update failed: " . mysqli_error($connection));
+                }
+                echo 'Customer phone number was edited!';
             }
             else {
-              // Otherwise do nothing
-              echo '';
+                // Otherwise do nothing
+                echo '';
             }
             mysqli_close($connection);
         ?>

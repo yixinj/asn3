@@ -51,43 +51,46 @@
       List all the customer names who bought more than a given quantity of any product. Prompt the user for the quantity. Display the description of the product and quantity purchased also.
     -->
     <div class="card">
-        <div class="card-body">
-            <h3 class="card-title">Customers Over Quantity</h3>
-            <table class="table">
-            <thead>
-                <tr>
-                <th scope="col">First name</th>
-                <th scope="col">Last name</th>
-                <th scope="col">Product description</th>
-                <th scope="col">Quantity</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $quantity = (int)$_POST['quantity'];
-                $query = 'SELECT customers.first_name AS first_name, customers.last_name AS last_name, products.product_description AS product_description, purchases.quantity AS quantity FROM purchases, customers, products WHERE customers.customer_id = purchases.customer_id AND products.product_id = purchases.product_id AND purchases.quantity > '. $quantity;
-                $result = mysqli_query($connection, $query);
-                if (!$result) {
-                    die("Querying for customers who bought more than a certain quantity failed.");
-                }
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo '
-                        <tr>
-                        <th scope="row">' . $row['first_name'] . '</th>
-                        <td>' . $row['last_name'] . '</td>
-                        <td>' . $row['product_description'] . '</td>
-                        <td>' . $row['quantity'] . '</td>
-                        </tr>
-                        ';
-                }
-                mysqli_free_result($result);
-                mysqli_close($connection);
-                ?>
-            </tbody>
-            </table>
-        <!-- Back button :) -->
-        <a href="other.php" class="btn btn-secondary">View other</a>
-        </div>
+      <div class="card-body">
+        <h3 class="card-title">Customers Over Quantity</h3>
+        <table class="table">
+        <thead>
+          <tr>
+          <th scope="col">First name</th>
+          <th scope="col">Last name</th>
+          <th scope="col">Product description</th>
+          <th scope="col">Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+              // SQL query 
+              $quantity = (int)$_POST['quantity'];
+              $query = 'SELECT customers.first_name AS first_name, customers.last_name AS last_name, products.product_description AS product_description, purchases.quantity AS quantity FROM purchases, customers, products WHERE customers.customer_id = purchases.customer_id AND products.product_id = purchases.product_id AND purchases.quantity > '. $quantity;
+              $result = mysqli_query($connection, $query);
+              if (!$result) {
+                  die("Querying for customers who bought more than a certain quantity failed.");
+              }
+
+              // Creates table
+              while ($row = mysqli_fetch_assoc($result)) {
+                  echo '
+                      <tr>
+                      <th scope="row">' . $row['first_name'] . '</th>
+                      <td>' . $row['last_name'] . '</td>
+                      <td>' . $row['product_description'] . '</td>
+                      <td>' . $row['quantity'] . '</td>
+                      </tr>
+                      ';
+              }
+              mysqli_free_result($result);
+              mysqli_close($connection);
+          ?>
+        </tbody>
+        </table>
+      <!-- Back button :) -->
+      <a href="other.php" class="btn btn-secondary">View other</a>
+      </div>
     </div>
   </div>
 

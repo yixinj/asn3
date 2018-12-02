@@ -46,8 +46,8 @@
   <?php include 'connect-db.php';?>
 
   <!--
-        Insert a new purchase (prompt for necessary data). Send an error message if they try to give an invalid customer id number or invalid product number. If the user tries to let a customer purchase a product they already have purchased, instead just let them change the quantity that the customer will have purchased of that product.  Don't allow the quantity to go lower, just higher by the amount they want now.
-      -->
+    Insert a new purchase (prompt for necessary data). Send an error message if they try to give an invalid customer id number or invalid product number. If the user tries to let a customer purchase a product they already have purchased, instead just let them change the quantity that the customer will have purchased of that product.  Don't allow the quantity to go lower, just higher by the amount they want now.
+  -->
   <div class="container">
     <h1 class="section-title">Other</h1>
     <div class="card">

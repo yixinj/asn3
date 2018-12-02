@@ -47,7 +47,8 @@
 
   <div class="container">
     <h1 class="section-title">Other</h1>
-    <!-- Insert purchase -->
+
+    <!-- Insert purchase. Don't allow them to choose invalid IDs -->
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Insert Purchase</h3>
@@ -80,6 +81,7 @@
         </form>
       </div>
     </div>
+
     <!--
       List all the customer names who bought more than a given quantity of any product. Prompt the user for the quantity. Display the description of the product and quantity purchased also.
     -->
@@ -99,6 +101,7 @@
         </form>
       </div>
     </div>
+
     <!--
       List the total number of purchases for a particular product and the product description and the total money made in sales for that product (cost * quantity)Prompt the user for the product id (Note: display an error message if the the product does not exist - or create the GUI in a way that the user cant pick a product that doesnt exist)
     -->

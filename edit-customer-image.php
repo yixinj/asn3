@@ -54,9 +54,9 @@
       <div class="card-body">
         <h3 class="card-title">Edit Image: Customer 
           <?php
-            // Retrieves form submission
-            $customer_id= $_GET["customer_id"];
-            echo $customer_id;
+              // Retrieves form submission
+              $customer_id= $_GET["customer_id"];
+              echo $customer_id;
           ?>
         </h3>
         <p class="card-text">
@@ -80,15 +80,15 @@
             
             // Updates phone number if phone number form is filled out
             if ($cus_image) { 
-              $query = 'UPDATE customers SET cus_image = "' . $cus_image . '" WHERE customer_id = "'. $customer_id . '"';
-              if (!mysqli_query($connection, $query)) {
-                  die("Error - update failed: " . mysqli_error($connection));
-              }
-              echo 'Customer image URL was edited!';
+                $query = 'UPDATE customers SET cus_image = "' . $cus_image . '" WHERE customer_id = "'. $customer_id . '"';
+                if (!mysqli_query($connection, $query)) {
+                    die("Error - update failed: " . mysqli_error($connection));
+                }
+                echo 'Customer image URL was edited!';
             }
             else {
-              // Otherwise do nothing
-              echo '';
+                // Otherwise do nothing
+                echo '';
             }
             mysqli_close($connection);
         ?>

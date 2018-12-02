@@ -44,7 +44,8 @@
 
   <!-- Connect to DB -->
   <?php include 'connect-db.php';?>
-
+  
+  <!-- List all the products in alphabetical order by description OR in order by price. Allow the user to decide if the order is ascending or descending for both the description and price. -->
   <div class="container">
     <h1 class="section-title">Products</h1>
     <div class="card">
@@ -61,8 +62,6 @@
           </thead>
           <tbody>
             <?php
-            // List all the products in alphabetical order by description OR in order by price. Allow the user to decide if the order is ascending or descending for both the description and price.
-
             $query = "SELECT * FROM products ORDER BY ";
 
             // Decides if it will be asc or desc price or description. Default = desc price
@@ -87,6 +86,7 @@
             if (!$result) {
                 die("databases query failed.");
             }
+            // Creates table
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '
                     <tr>
@@ -97,19 +97,20 @@
                     </tr>
                     ';
             }
+            // Frees result but does not disconnect
             mysqli_free_result($result);
             ?>
-            <script src="get-customer-purchases.js"></script>
           </tbody>
         </table>
 
-        <!-- Allows sorting sort -->
+        <!-- Buttons to decide how to sort table -->
         <a class="btn btn-primary" href="products.php?sort=asc_price" role="button">Ascending price</a>
         <a class="btn btn-primary" href="products.php?sort=desc_price" role="button">Descending price</a>
         <a class="btn btn-primary" href="products.php?sort=asc_description" role="button">Ascending description</a>
         <a class="btn btn-primary" href="products.php?sort=desc_description" role="button">Descending description</a>
       </div>
     </div>
+
     <!-- List the description of any product that has never been purchased -->
     <div class="card">
       <div class="card-body">
@@ -131,6 +132,7 @@
             if (!$result) {
                 die("Querying from products/purchases failed.");
             }
+            // Creates table
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '
                     <tr>
