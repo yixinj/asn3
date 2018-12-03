@@ -42,8 +42,6 @@
     </div>
   </nav>
 
-  <!-- Connect to DB -->
-  <?php include 'connect-db.php';?>
 
   <div class="container">
     <h1 class="section-title">Documentation</h1>
